@@ -1276,7 +1276,7 @@ A CLOSING WORD FROM JOY
 [Warm faith-infused personal closing. Address their confidence level. Speak to their obstacles. Encourage them. End with: "Don't just build a business. Build a BRAND. Build so you can rest in what God has placed inside of you, so you can LIVE." Sign it — xo Joy, The Ministry of Business 💛]`;
 
   try {
-    const response = await fetch('/.netlify/functions/generate', {
+    const response = await fetch('/api/generate', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
