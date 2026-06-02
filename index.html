@@ -1095,9 +1095,9 @@ async function generateBible() {
 
   const ct = Array.isArray(d.contentType) ? d.contentType.join(', ') : (d.contentType || 'Not provided');
 
-  const prompt = `You are Joy from The Ministry of Business — a faith-driven business and brand coach who helps Christian entrepreneurs build brands that work for them, not the other way around. Your voice is warm, direct, inspirational, and deeply personal. You believe in Faith + Strategy + Systems = Freedom.
+  const prompt = `You are Joy from The Ministry of Business — a faith-driven business and brand coach. Your voice is warm, direct, personal, and inspirational. You believe Faith + Strategy + Systems = Freedom.
 
-A client has filled out your Brand Bible Builder. Using their answers, create their complete personalized BRAND BIBLE. Be specific, personal, and warm. Reference their actual answers throughout. Never be generic. This should feel like Joy sat down with them personally.
+A client just completed your Brand Bible Builder. Create their COMPLETE personalized Brand Bible. Be SPECIFIC and ACTIONABLE. Use their exact answers. Make them feel like you built this just for them. Write EVERYTHING in plain text — absolutely NO markdown symbols like # ## * ** or similar. Use ALL CAPS for section headers. Use dashes for lists.
 
 CLIENT ANSWERS:
 Name: ${d.name || 'Not provided'}
@@ -1157,123 +1157,226 @@ Confidence Level: ${d.confidence || 'Not provided'}/10
 Deep WHY: ${d.deepWhy || 'Not provided'}
 Anything Else: ${d.anythingElse || 'Not provided'}
 
-Create their Brand Bible with this exact structure:
+Now write their Brand Bible. Use plain text only. No # or * symbols ever.
 
 💛 ${name.toUpperCase()}'S BRAND BIBLE
 Built by The Ministry of Business
-
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
 A WORD BEFORE WE BEGIN
-[Personal faith-infused opening. Reference their WHY and deep WHY. Make them feel seen. 3-4 sentences. Sign it — Joy, The Ministry of Business]
+[Write 3-4 warm personal sentences directly to them by name. Reference their specific WHY and story. Make them feel SEEN. Sign it xo Joy, The Ministry of Business 💛]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
 SECTION 1: YOUR BRAND FOUNDATION
-Business Name: [their name or suggested name]
-What You Do: [one clear sentence]
-Who You Serve: [specific]
-The Problem You Solve: [specific]
+
+Business Name: [their name or a suggested name if they don't have one — explain why if suggesting]
+What You Do: [one crystal clear sentence specific to their answers]
+Who You Serve: [describe their ideal client specifically]
+The Problem You Solve: [specific to their business — make it compelling]
 Business Type: [product/service/mix]
-Stage: [their stage]
+Your Stage: [their stage plus one encouraging sentence about what this means for them]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
-SECTION 2: YOUR BRAND STORY & POSITIONING
-Your WHY: [personalized summary]
-Your Story: [reframed as powerful brand narrative]
-What Makes You Different: [stated powerfully]
-Your Credentials & Social Proof: [what they have + what to build toward]
-Your Transformation Promise: [Feel + Do + Become as brand promise]
+SECTION 2: YOUR STORY AND POSITIONING
+
+Your WHY as a Brand Story: [2-3 sentences reframing their WHY as a powerful compelling brand narrative]
+
+What Makes You Different: [state their differentiator as one bold powerful declaration]
+
+Your Proof Points:
+- [specific credibility item from their answers]
+- [specific credibility item]
+- [what to build toward next]
+- [what to build toward next]
+
+Your Transformation Promise: [one powerful sentence: I help [who] go from [before state] to [after state] so they can [ultimate result]]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
-SECTION 3: YOUR BRAND PERSONALITY & VOICE
-Brand Personality: [based on their answers]
-Brand Vibe: [their words in context]
-Communication Style: [their style + how to apply it]
-Brand Voice Guide:
-  - Tone: [specific]
-  - Phrases to USE: [3-5 examples]
-  - Phrases to AVOID: [based on never words]
-  - You sound like: [1-2 sentence description]
-Your Brand Promise: [what they want to be known for as a promise]
+SECTION 3: YOUR BRAND VOICE AND PERSONALITY
+
+Your Brand Personality: [one specific vivid sentence]
+
+How to Sound Like You: [2-3 specific sentences about their communication style and how to apply it]
+
+Phrases You SHOULD Use:
+- [specific phrase that fits their brand]
+- [specific phrase]
+- [specific phrase]
+- [specific phrase]
+- [specific phrase]
+
+Phrases to NEVER Use:
+- [based on their never words]
+- [anything that clashes with their vibe]
+- [one more]
+
+You Sound Like: [2 vivid specific sentences describing their brand voice — NOT generic]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
-SECTION 4: YOUR BRAND AESTHETIC
-Recommended Color Palette:
-  Primary Color: [specific + why it fits]
-  Secondary Color: [specific]
-  Accent Color: [specific]
-Recommended Fonts:
-  Heading Font: [specific + why]
-  Body Font: [specific]
-Logo Direction: [guidance]
-Overall Aesthetic: [their visual brand direction]
-Mood & Feel: [what visuals should make people feel]
+SECTION 4: YOUR BRAND COLORS AND AESTHETIC
+
+Your Recommended Color Palette:
+- Primary Color: [specific color name] — Use this because: [specific reason tied to their brand and audience]
+- Secondary Color: [specific color name] — Use this because: [specific reason]
+- Accent Color: [specific color name] — Use this because: [specific reason]
+
+Your Fonts:
+- Heading Font: [specific font name available on Canva] — Use this because: [specific reason]
+- Body Font: [specific font name available on Canva] — Use this because: [specific reason]
+
+Your Logo Direction: [specific guidance — what it should look like, include, feel like. If they have one, tell them what to keep and what to update]
+
+Your Visual Brand Direction: [3-4 sentences describing exactly what their brand should look like — be specific and visual and exciting]
+
+The feeling your visuals should create: [one specific sentence]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
-SECTION 5: YOUR ONLINE PRESENCE REVIEW & RECOMMENDATIONS
-Social Media Review: [review what they shared + specific recommendations]
-Website Guidance: [review + specific guidance]
-Priority Focus: [what to focus on first]
-Your Ready-to-Use Bio: [write them a complete bio]
-Link in Bio Strategy: [what links to include and why]
+SECTION 5: YOUR ONLINE PRESENCE PLAN
+
+Where You Are Now: [honest warm assessment of their current presence]
+
+Your Priority Platform: [tell them exactly which platform to focus on first and exactly why]
+
+What to Post:
+- [specific content direction 1 for their business]
+- [specific content direction 2]
+- [specific content direction 3]
+- [specific content direction 4]
+
+Your Ready-to-Use Bio (copy and paste this right now):
+[Write their COMPLETE bio — 3-4 lines — using their actual brand information and voice]
+
+Your Link in Bio Strategy:
+- Link 1: [specific recommendation and why]
+- Link 2: [specific recommendation and why]
+- Link 3: [specific recommendation and why]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
-SECTION 6: YOUR OFFERS & INCOME STRATEGY
-Current Offer Suite: [review what they have]
-Recommended Lead Offer: [specific + price point]
-Income Strategy: [passive income guidance]
-Offer to Build Next: [address their unbuilt offer]
-Pricing Guidance: [specific]
-Path to Income Goal: [practical steps]
+SECTION 6: YOUR OFFERS AND INCOME STRATEGY
+
+What You Have Now: [honest warm assessment of current offers]
+
+Your Lead Offer — Start Here:
+- Name: [specific compelling offer name]
+- What It Is: [2-3 sentences describing it specifically]
+- Price: [specific price and why]
+- Why Start Here: [specific reason tied to their situation]
+
+Your Second Offer — Build This Next:
+- Name: [specific offer name]
+- What It Is: [2-3 sentences]
+- Price: [specific price]
+
+Your Premium Offer — Your Big One:
+- Name: [specific offer name]
+- What It Is: [2-3 sentences]
+- Price: [specific price range]
+
+Your Freebie — Use This to Build Your List:
+- Name: [specific freebie name]
+- What It Is: [1-2 sentences]
+- Where It Leads: [what offer it connects to]
+
+How You Get to [their income goal]: [3-4 specific encouraging sentences about the realistic path to their income goal]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
 SECTION 7: YOUR CONTENT STRATEGY
-Your Content Pillars: [5 specific topics]
-Content Types to Focus On: [based on comfort level]
-Realistic Posting Schedule: [bridge gap between now and goal]
-5 Content Ideas to Start With: [specific to their business]
-Hashtag Strategy: [5-8 relevant hashtags]
-Your Viral Content Formula: [based on what worked or excites them]
+
+Your 5 Content Pillars — Create Content Around These Every Week:
+
+Pillar 1: [Name] — [What this means for their specific business + one example post idea]
+Pillar 2: [Name] — [What this means + example]
+Pillar 3: [Name] — [What this means + example]
+Pillar 4: [Name] — [What this means + example]
+Pillar 5: [Name] — [What this means + example]
+
+Your Posting Schedule:
+- Start with: [specific realistic frequency based on their current habits]
+- Build toward: [goal frequency and timeframe]
+- Best times to post: [specific days and times based on their audience]
+
+Your First 5 Posts — Write These This Week:
+1. [Specific post idea with direction for caption]
+2. [Specific post idea with direction]
+3. [Specific post idea with direction]
+4. [Specific post idea with direction]
+5. [Specific post idea with direction]
+
+Your Hashtags — Use These on Every Post:
+[List 8-10 specific relevant hashtags for their exact niche — no generic ones]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
-SECTION 8: YOUR PERSONALIZED WORK SCHEDULE
-Your Protected Time: [their specific day and hours]
-Weekly Rotating Plan:
-  Week 1: [specific task]
-  Week 2: [specific task]
-  Week 3: [specific task]
-  Week 4: [specific task]
-How to Use AI During Your Work Time: [practical and specific]
-Monthly Focus:
-  Month 1: [specific]
-  Month 2: [specific]
-  Month 3: [specific]
-  Month 4: [specific]
+SECTION 8: YOUR WEEKLY WORK SCHEDULE
+
+Your Protected Time: [their specific day and hours from their answers]
+
+Your Weekly Rotation:
+- Week 1: [specific task and why this week]
+- Week 2: [specific task and why]
+- Week 3: [specific task and why]
+- Week 4: [specific task and why]
+
+How to Use AI During Your Work Time:
+- [specific AI use case for their business]
+- [specific AI use case]
+- [specific AI use case]
+- [specific AI use case]
+- [specific AI use case]
+
+Your Monthly Focus Plan:
+- Month 1: [specific focus] — Actions: [2-3 specific things to do]
+- Month 2: [specific focus] — Actions: [2-3 specific things to do]
+- Month 3: [specific focus] — Actions: [2-3 specific things to do]
+- Month 4: [specific focus] — Actions: [2-3 specific things to do]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
-SECTION 9: YOUR 90-DAY BRAND LAUNCH PLAN
-Phase 1 — Days 1-30: [Focus + 3-4 specific actions]
-Phase 2 — Days 31-60: [Focus + 3-4 specific actions]
-Phase 3 — Days 61-90: [Focus + 3-4 specific actions]
+SECTION 9: YOUR 90-DAY ACTION PLAN
+
+PHASE 1: DAYS 1-30 — FOUNDATION
+Focus: [specific focus area]
+- [specific measurable action]
+- [specific measurable action]
+- [specific measurable action]
+- [specific measurable action]
+
+PHASE 2: DAYS 31-60 — MOMENTUM  
+Focus: [specific focus area]
+- [specific measurable action]
+- [specific measurable action]
+- [specific measurable action]
+- [specific measurable action]
+
+PHASE 3: DAYS 61-90 — GROWTH
+Focus: [specific focus area]
+- [specific measurable action]
+- [specific measurable action]
+- [specific measurable action]
+- [specific measurable action]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
-SECTION 10: HOW TO USE YOUR BRAND BIBLE
-[5-7 practical bullet points including how to use AI to help execute]
+SECTION 10: HOW TO USE THIS BRAND BIBLE
+
+- [Specific instruction 1 — practical and actionable]
+- [Specific instruction 2]
+- [Specific instruction 3]
+- [Specific instruction 4 — include how to use AI to help execute]
+- [Specific instruction 5]
+- [Specific instruction 6]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
 A CLOSING WORD FROM JOY
-[Warm faith-infused personal closing. Address their confidence level. Speak to their obstacles. Encourage them. End with: "Don't just build a business. Build a BRAND. Build so you can rest in what God has placed inside of you, so you can LIVE." Sign it — xo Joy, The Ministry of Business 💛]`;
+[Write a warm personal closing paragraph. Address their confidence level number specifically. Speak directly to their main obstacle. Give them one specific encouraging action to take TODAY. End with exactly this: Don't just build a business. Build a BRAND. Build so you can rest in what God has placed inside of you, so you can LIVE. Sign it xo Joy, The Ministry of Business 💛]`;
 
   try {
     const response = await fetch('/api/generate', {
@@ -1291,7 +1394,35 @@ A CLOSING WORD FROM JOY
 
     document.getElementById('loadingState').style.display = 'none';
     document.getElementById('resultState').style.display = 'block';
-    document.getElementById('resultContent').textContent = result;
+    document.getElementById('loadingState').style.display = 'none';
+    document.getElementById('resultState').style.display = 'block';
+    
+    // Render the result beautifully
+    const lines = result.split('\n');
+    let html = '';
+    for (let line of lines) {
+      line = line.trim();
+      if (!line) {
+        html += '<br>';
+      } else if (line.includes('━━━')) {
+        html += '<hr style="border:none;border-top:2px solid rgba(201,168,76,0.3);margin:1.5rem 0;">';
+      } else if (line.match(/^💛.*BRAND BIBLE$/)) {
+        html += '<h1 style="font-family:Playfair Display,serif;color:#2D5016;font-size:26px;font-weight:600;text-align:center;margin:1rem 0 0.25rem;">' + line + '</h1>';
+      } else if (line === 'Built by The Ministry of Business') {
+        html += '<p style="text-align:center;color:#C9A84C;font-size:13px;margin-bottom:1.5rem;letter-spacing:0.05em;">' + line + '</p>';
+      } else if (line.match(/^SECTION \d+:/)) {
+        html += '<h2 style="font-family:Playfair Display,serif;color:#2D5016;font-size:20px;font-weight:500;margin:1.5rem 0 0.75rem;padding-bottom:0.25rem;border-bottom:1px solid rgba(201,168,76,0.2);">' + line + '</h2>';
+      } else if (line.match(/^A WORD BEFORE|^A CLOSING WORD|^PHASE \d+:|^PILLAR \d+:/)) {
+        html += '<h3 style="font-family:Playfair Display,serif;color:#2D5016;font-size:16px;font-weight:500;margin:1.25rem 0 0.5rem;">' + line + '</h3>';
+      } else if (line.startsWith('- ')) {
+        html += '<p style="margin:0.4rem 0 0.4rem 1.5rem;color:#1A1A1A;line-height:1.6;">• ' + line.substring(2) + '</p>';
+      } else if (line.match(/^(Your |What |How |The |Business |Where |Who |An |A )[A-Z]/)) {
+        html += '<p style="margin:0.75rem 0 0.25rem;font-weight:500;color:#2D5016;">' + line + '</p>';
+      } else {
+        html += '<p style="margin:0.4rem 0;color:#1A1A1A;line-height:1.7;">' + line + '</p>';
+      }
+    }
+    document.getElementById('resultContent').innerHTML = html;
 
   } catch(err) {
     document.getElementById('loadingState').style.display = 'none';
