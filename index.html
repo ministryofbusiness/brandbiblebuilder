@@ -14,47 +14,63 @@
 }
 body { font-family: "DM Sans", sans-serif; background: var(--cream); color: var(--text); }
 .container { max-width: 680px; margin: 0 auto; padding-bottom: 3rem; }
-.hero { background: var(--green); padding: 2.5rem 2rem 2rem; text-align: center; }
-.badge { display: inline-block; background: rgba(201,168,76,0.15); color: var(--gold); font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; border: 1px solid rgba(201,168,76,0.3); margin-bottom: 1rem; }
-.hero h1 { font-family: "Playfair Display", serif; font-size: 32px; font-weight: 600; color: white; line-height: 1.2; margin-bottom: 0.4rem; }
+
+/* HERO */
+.hero { background: var(--green); padding: 2rem 2rem 1.75rem; text-align: center; }
+.badge { display: inline-block; background: rgba(201,168,76,0.15); color: var(--gold); font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; border: 1px solid rgba(201,168,76,0.3); margin-bottom: 0.85rem; }
+.hero h1 { font-family: "Playfair Display", serif; font-size: 30px; font-weight: 600; color: white; line-height: 1.2; margin-bottom: 0.3rem; }
 .hero h1 span { color: var(--gold); }
-.hero-sub { font-size: 14px; color: rgba(255,255,255,0.7); font-weight: 300; margin-bottom: 1.5rem; }
-.manifesto { background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.25); border-radius: 12px; padding: 1.25rem 1.5rem; max-width: 520px; margin: 0 auto; }
-.manifesto p { font-family: "Playfair Display", serif; font-size: 14px; color: rgba(255,255,255,0.9); line-height: 1.8; font-style: italic; }
+.hero-sub { font-size: 13px; color: rgba(255,255,255,0.7); font-weight: 300; margin-bottom: 1.25rem; }
+.manifesto { background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.25); border-radius: 12px; padding: 1rem 1.35rem; max-width: 520px; margin: 0 auto; }
+.manifesto p { font-family: "Playfair Display", serif; font-size: 13.5px; color: rgba(255,255,255,0.9); line-height: 1.75; font-style: italic; }
 .manifesto p strong { color: var(--gold); font-style: normal; font-weight: 500; }
-.notice { background: #FFF8E7; border-left: 4px solid var(--gold); padding: 1rem 1.25rem; margin: 1.5rem; border-radius: 0 8px 8px 0; }
+
+/* NOTICE */
+.notice { background: #FFF8E7; border-left: 4px solid var(--gold); padding: 0.9rem 1.25rem; margin: 1.25rem 1.5rem; border-radius: 0 8px 8px 0; }
 .notice p { font-size: 13px; color: #7A5C00; line-height: 1.6; }
-.progress-wrap { padding: 1.25rem 1.5rem 0; }
-.progress-top { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-muted); margin-bottom: 6px; }
+
+/* PROGRESS */
+.progress-wrap { padding: 1rem 1.5rem 0; }
+.progress-top { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-muted); margin-bottom: 5px; }
 .progress-bar { height: 5px; background: rgba(201,168,76,0.15); border-radius: 3px; overflow: hidden; }
 .progress-fill { height: 100%; background: linear-gradient(90deg, var(--green), var(--gold)); border-radius: 3px; transition: width 0.4s ease; }
-.section { display: none; padding: 1.5rem; animation: fadeUp 0.3s ease; }
+
+/* SECTIONS */
+.section { display: none; padding: 1.25rem 1.5rem; animation: fadeUp 0.3s ease; }
 .section.active { display: block; }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-.section-num { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 4px; }
-.section-title { font-family: "Playfair Display", serif; font-size: 24px; font-weight: 500; color: var(--green); margin-bottom: 1.5rem; line-height: 1.2; }
-.field { margin-bottom: 1.25rem; }
-label.field-label { display: block; font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 6px; line-height: 1.5; cursor: default; }
-.hint { display: block; font-size: 12px; font-weight: 400; color: var(--text-muted); margin-top: 3px; line-height: 1.5; }
-input[type="text"], textarea, select { width: 100%; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-family: "DM Sans", sans-serif; font-size: 14px; color: var(--text); background: var(--white); transition: border-color 0.2s; outline: none; }
+.section-num { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 3px; }
+.section-title { font-family: "Playfair Display", serif; font-size: 22px; font-weight: 500; color: var(--green); margin-bottom: 1.25rem; line-height: 1.2; }
+
+/* FIELDS */
+.field { margin-bottom: 1.1rem; }
+label.field-label { display: block; font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 5px; line-height: 1.5; cursor: default; }
+.hint { display: block; font-size: 12px; font-weight: 400; color: var(--text-muted); margin-top: 2px; line-height: 1.5; }
+input[type="text"], textarea, select { width: 100%; padding: 9px 13px; border: 1.5px solid var(--border); border-radius: 8px; font-family: "DM Sans", sans-serif; font-size: 14px; color: var(--text); background: var(--white); transition: border-color 0.2s; outline: none; }
 input[type="text"]:focus, textarea:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.12); }
-textarea { resize: vertical; min-height: 85px; line-height: 1.6; }
-.radio-group, .check-group { display: flex; flex-direction: column; gap: 8px; }
-.radio-item, .check-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px; cursor: pointer; background: var(--white); transition: all 0.15s; user-select: none; }
+textarea { resize: vertical; min-height: 80px; line-height: 1.6; }
+.radio-group, .check-group { display: flex; flex-direction: column; gap: 7px; }
+.radio-item, .check-item { display: flex; align-items: flex-start; gap: 10px; padding: 9px 13px; border: 1.5px solid var(--border); border-radius: 8px; cursor: pointer; background: var(--white); transition: all 0.15s; user-select: none; }
 .radio-item:hover, .check-item:hover { border-color: var(--gold); background: #FFFBF0; }
 .radio-item input[type="radio"], .check-item input[type="checkbox"] { width: 16px; height: 16px; min-width: 16px; margin-top: 2px; accent-color: var(--green); cursor: pointer; }
 .radio-item span, .check-item span { font-size: 14px; color: var(--text); line-height: 1.4; }
-.nav { display: flex; gap: 10px; padding: 0.5rem 1.5rem 1rem; }
-.btn-back { flex: 1; padding: 13px; border: 1.5px solid var(--border); border-radius: 8px; background: var(--white); color: var(--text-muted); font-family: "DM Sans", sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.15s; }
+
+/* NAV */
+.nav { display: flex; gap: 10px; padding: 0.4rem 1.5rem 0.75rem; }
+.btn-back { flex: 1; padding: 12px; border: 1.5px solid var(--border); border-radius: 8px; background: var(--white); color: var(--text-muted); font-family: "DM Sans", sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.15s; }
 .btn-back:hover { border-color: var(--gold); color: var(--text); }
-.btn-next { flex: 2; padding: 13px; border: none; border-radius: 8px; background: var(--green); color: white; font-family: "DM Sans", sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.15s; }
+.btn-next { flex: 2; padding: 12px; border: none; border-radius: 8px; background: var(--green); color: white; font-family: "DM Sans", sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.15s; }
 .btn-next:hover { background: var(--green-mid); }
-.closing-box { background: var(--green); border-radius: 14px; padding: 2rem; text-align: center; margin-top: 1.5rem; }
-.closing-box h3 { font-family: "Playfair Display", serif; font-size: 22px; color: white; margin-bottom: 0.75rem; }
-.closing-box p { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 0.75rem; }
-.closing-box .quote { font-family: "Playfair Display", serif; font-size: 14px; color: var(--gold); font-style: italic; line-height: 1.7; margin: 1rem 0; }
-.btn-generate { width: 100%; padding: 16px; border: none; border-radius: 10px; background: var(--gold); color: white; font-family: "Playfair Display", serif; font-size: 20px; font-weight: 500; cursor: pointer; transition: all 0.2s; margin-top: 1rem; }
+
+/* CLOSING BOX */
+.closing-box { background: var(--green); border-radius: 14px; padding: 1.75rem; text-align: center; margin-top: 1.25rem; }
+.closing-box h3 { font-family: "Playfair Display", serif; font-size: 22px; font-weight: 600; color: white; margin-bottom: 0.65rem; letter-spacing: -0.01em; }
+.closing-box p { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 0.6rem; }
+.closing-box .quote { font-family: "Playfair Display", serif; font-size: 13.5px; color: var(--gold); font-style: italic; line-height: 1.7; margin: 0.85rem 0; }
+.btn-generate { width: 100%; padding: 15px; border: none; border-radius: 10px; background: var(--gold); color: white; font-family: "Playfair Display", serif; font-size: 19px; font-weight: 500; cursor: pointer; transition: all 0.2s; margin-top: 0.85rem; }
 .btn-generate:hover { background: var(--gold-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201,168,76,0.3); }
+
+/* RESULT */
 .result-wrap { display: none; padding: 1.5rem; }
 .result-wrap.active { display: block; }
 .loading { text-align: center; padding: 3rem 1rem; }
@@ -62,20 +78,22 @@ textarea { resize: vertical; min-height: 85px; line-height: 1.6; }
 @keyframes spin { to { transform: rotate(360deg); } }
 .loading h3 { font-family: "Playfair Display", serif; font-size: 20px; color: var(--green); margin-bottom: 0.5rem; }
 .loading p { font-size: 13px; color: var(--text-muted); }
-.result-header { background: var(--green); border-radius: 12px; padding: 1.75rem; margin-bottom: 1.5rem; text-align: center; }
-.result-header h2 { font-family: "Playfair Display", serif; font-size: 26px; color: white; margin-bottom: 0.35rem; }
+.result-header { background: var(--green); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.25rem; text-align: center; }
+.result-header h2 { font-family: "Playfair Display", serif; font-size: 24px; color: white; margin-bottom: 0.3rem; }
 .result-header p { font-size: 13px; color: rgba(255,255,255,0.7); }
-.result-content { background: white; border: 1.5px solid var(--border); border-radius: 12px; padding: 1.75rem; font-size: 14px; line-height: 1.85; color: var(--text); }
+.result-content { background: white; border: 1.5px solid var(--border); border-radius: 12px; padding: 1.5rem; font-size: 14px; line-height: 1.85; color: var(--text); }
 .result-actions { display: flex; gap: 10px; margin-top: 1rem; }
 .btn-copy { flex: 1; padding: 13px; background: var(--green); color: white; border: none; border-radius: 8px; font-family: "DM Sans", sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; }
 .btn-print { flex: 1; padding: 13px; background: white; color: var(--green); border: 1.5px solid var(--border); border-radius: 8px; font-family: "DM Sans", sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; }
 .error-box { background: #FFF0F0; border: 1px solid #FFCCCC; border-radius: 8px; padding: 1rem; font-size: 13px; color: #CC0000; margin-top: 1rem; display: none; }
+
 @media print { .hero, .notice, .progress-wrap, .nav, .result-actions, .result-header { display: none !important; } .result-content { border: none; padding: 0; } }
 </style>
 </head>
 <body>
 <div class="container">
 
+<!-- HERO -->
 <div class="hero">
   <div class="badge">The Ministry of Business</div>
   <h1>The Brand Bible <span>Builder</span></h1>
@@ -86,10 +104,12 @@ textarea { resize: vertical; min-height: 85px; line-height: 1.6; }
   </div>
 </div>
 
+<!-- BEFORE YOU BEGIN NOTICE -->
 <div class="notice">
-  <p><strong>Before you begin —</strong> This Brand Bible Builder is designed for <strong>ONE business at a time</strong>. If you're a multi-passionate entrepreneur with several ideas — we see you! But trust us, the magic happens when you FOCUS. Pick the ONE business you're most committed to right now and answer every question with THAT business in mind. You can always come back and build a Brand Bible for your next business later! 💛</p>
+  <p><strong>Before you begin —</strong> This Brand Bible Builder is designed for <strong>ONE business at a time</strong>. If you're a multi-passionate entrepreneur with several ideas — we see you! But trust us, the real <strong>blueprint</strong> happens when you FOCUS. Pick the ONE business you're most committed to right now and answer every question with THAT business in mind. You can always come back and build a Brand Bible for your next business later! 💛</p>
 </div>
 
+<!-- PROGRESS -->
 <div class="progress-wrap">
   <div class="progress-top">
     <span id="progressLabel">Section 1 of 4</span>
@@ -100,7 +120,7 @@ textarea { resize: vertical; min-height: 85px; line-height: 1.6; }
 
 <form id="bbForm" autocomplete="off">
 
-<!-- SECTION 1 -->
+<!-- SECTION 1: YOUR BUSINESS BLUEPRINT -->
 <div class="section active" data-section="1">
   <div class="section-num">Section 1 of 4</div>
   <div class="section-title">Your Business Blueprint</div>
@@ -144,10 +164,10 @@ textarea { resize: vertical; min-height: 85px; line-height: 1.6; }
   </div>
 </div>
 
-<!-- SECTION 2 -->
+<!-- SECTION 2: YOUR STORY & BRAND SOUL -->
 <div class="section" data-section="2">
   <div class="section-num">Section 2 of 4</div>
-  <div class="section-title">Your Story & Brand</div>
+  <div class="section-title">Your Story & Brand Soul</div>
 
   <div class="field">
     <label class="field-label" for="why">What's your WHY — why did you start this business and what drives you to keep going?</label>
@@ -155,13 +175,13 @@ textarea { resize: vertical; min-height: 85px; line-height: 1.6; }
   </div>
 
   <div class="field">
-    <label class="field-label" for="feelDoBecome">When someone encounters your BUSINESS what do you want them to FEEL, DO, and ultimately BECOME because of you?</label>
+    <label class="field-label" for="feelDoBecome">When someone encounters your business, what do you want them to FEEL, DO, and ultimately BECOME because of you?</label>
     <textarea id="feelDoBecome" name="feelDoBecome" placeholder="I want them to feel... do... and become..."></textarea>
   </div>
 
   <div class="field">
     <label class="field-label" for="personality">How would you describe your brand personality and vibe?
-      <span class="hint">Examples: bold and direct, warm and nurturing, fun and energetic, professional and polished, inspirational and faith driven — or describe it in your own words!</span>
+      <span class="hint">Examples: bold and direct, warm and nurturing, fun and energetic, professional and polished, inspirational and faith-driven — or describe it in your own words!</span>
     </label>
     <textarea id="personality" name="personality" placeholder="My brand personality is..."></textarea>
   </div>
@@ -172,18 +192,27 @@ textarea { resize: vertical; min-height: 85px; line-height: 1.6; }
   </div>
 </div>
 
-<!-- SECTION 3 -->
+<!-- SECTION 3: YOUR GOALS & VISION -->
 <div class="section" data-section="3">
   <div class="section-num">Section 3 of 4</div>
-  <div class="section-title">Your Goals & Vision</div>
+  <div class="section-title">Your Goals & God-Sized Vision</div>
 
   <div class="field">
-    <label class="field-label" for="incomeGoal">What is your income goal and what does success look like for you in the next 90 days?</label>
-    <textarea id="incomeGoal" name="incomeGoal" placeholder="My income goal is... In 90 days I want to..."></textarea>
+    <label class="field-label" for="incomeGoal">What is your overall income goal — the number you're building toward?
+      <span class="hint">Think big. $5K months? $10K months? 6 figures? There's no wrong answer here — just an honest one. 💛</span>
+    </label>
+    <input type="text" id="incomeGoal" name="incomeGoal" placeholder="My income goal is..." />
   </div>
 
   <div class="field">
-    <label class="field-label" for="bigVision">Close your eyes. 3-5 years from now — where are you? What does your life AND your business look like? Dream out loud.</label>
+    <label class="field-label" for="goal90">In the next 90 days specifically — what does a WIN look like for you?
+      <span class="hint">This is your near-term target. Be as specific as you can — first sale, first client, first $1K, launched and live, etc.</span>
+    </label>
+    <textarea id="goal90" name="goal90" placeholder="In 90 days I want to..."></textarea>
+  </div>
+
+  <div class="field">
+    <label class="field-label" for="bigVision">Close your eyes. 3–5 years from now — where are you? What does your life AND your business look like? Dream out loud.</label>
     <textarea id="bigVision" name="bigVision" placeholder="In 3-5 years..."></textarea>
   </div>
 
@@ -198,19 +227,14 @@ textarea { resize: vertical; min-height: 85px; line-height: 1.6; }
   </div>
 
   <div class="field">
-    <label class="field-label" for="workSchedule">Realistically how many hours per week can you dedicate to building your business — and what day or days of the week work best?
+    <label class="field-label" for="workSchedule">Realistically, how many hours per week can you dedicate to building your business — and what day or days work best?
       <span class="hint">Example: 3 hours a week, Tuesdays and Thursdays. We'll build your actual schedule around this! 💛</span>
     </label>
-    <input type="text" id="workSchedule" name="workSchedule" placeholder="e.g. 3 hours a week, Tuesdays 9am-11am" />
-  </div>
-
-  <div class="field">
-    <label class="field-label" for="bigHope">What's the ONE thing you're hoping this Brand Bible gives you that you haven't been able to figure out on your own?</label>
-    <textarea id="bigHope" name="bigHope" placeholder="The one thing I've never been able to figure out is..."></textarea>
+    <input type="text" id="workSchedule" name="workSchedule" placeholder="e.g. 3 hours a week, Tuesdays 9am–11am" />
   </div>
 </div>
 
-<!-- SECTION 4 -->
+<!-- SECTION 4: YOUR LOOK, PRESENCE & CONTENT -->
 <div class="section" data-section="4">
   <div class="section-num">Section 4 of 4</div>
   <div class="section-title">Your Look, Presence & Content</div>
@@ -237,8 +261,17 @@ textarea { resize: vertical; min-height: 85px; line-height: 1.6; }
   </div>
 
   <div class="field">
-    <label class="field-label" for="contentType">What kind of content do you feel most comfortable creating and how often do you currently post?</label>
-    <textarea id="contentType" name="contentType" placeholder="I'm most comfortable creating... I currently post..."></textarea>
+    <label class="field-label" for="postFrequency">How often do you currently post on social media — be honest!
+      <span class="hint">Examples: daily, a few times a week, whenever I can, rarely, never — no judgment here! 💛</span>
+    </label>
+    <input type="text" id="postFrequency" name="postFrequency" placeholder="e.g. Daily / A few times a week / Whenever I can / Never" />
+  </div>
+
+  <div class="field">
+    <label class="field-label" for="contentType">What kind of content feels most comfortable for you to create?
+      <span class="hint">Examples: Reels, photos, graphics, writing captions, going live, stories, carousels — pick what feels most natural!</span>
+    </label>
+    <input type="text" id="contentType" name="contentType" placeholder="e.g. Reels / Photos / Writing / Graphics / All of the above!" />
   </div>
 
   <div class="field">
@@ -248,7 +281,7 @@ textarea { resize: vertical; min-height: 85px; line-height: 1.6; }
 
   <div class="field">
     <label class="field-label" for="secretSauce">Finally — what's the ONE thing you're hoping this Brand Bible gives you that you haven't been able to figure out on your own?
-      <span class="hint">Be specific. This is how we make sure your Bible speaks directly to your biggest need. 💛</span>
+      <span class="hint">Be specific. This is how we make sure your Brand Bible speaks directly to your biggest need. 💛</span>
     </label>
     <textarea id="secretSauce" name="secretSauce" placeholder="The one thing I've never been able to figure out on my own is..."></textarea>
   </div>
@@ -258,8 +291,9 @@ textarea { resize: vertical; min-height: 85px; line-height: 1.6; }
     <p>You just did something most people never do — you got <strong style="color:var(--gold)">CLEAR</strong>. And that alone sets you apart.</p>
     <p>You showed up. You got honest. You dreamed out loud. Now let us do the rest.</p>
     <p>Give us about 60 seconds while we take everything you just shared and build something beautiful — something personalized — just for you.</p>
-    <p class="quote">"So let's build — so you can rest in what God has placed inside of you, knowing that what's on the other side is greater. Don't just build a business. Use this blueprint to build a BRAND." 💛</p>
-    <button type="button" class="btn-generate" onclick="generateBible()">BUILD MY BRAND BIBLE</button>
+    <p class="quote">"Start building what God placed inside of you — with strategy, with purpose, and with your whole life in mind. What's waiting on the other side is greater than you can imagine." 💛</p>
+    <p style="font-size:13px;color:rgba(255,255,255,0.9);font-weight:500;margin-bottom:0;">Use this blueprint to go from Business to Brand!</p>
+    <button type="button" class="btn-generate" onclick="generateBible()">BUILD MY BRAND</button>
   </div>
 </div>
 
@@ -270,6 +304,7 @@ textarea { resize: vertical; min-height: 85px; line-height: 1.6; }
   <button class="btn-next" id="btnNext" onclick="goNext()">Next Section →</button>
 </div>
 
+<!-- RESULT -->
 <div class="result-wrap" id="resultWrap">
   <div class="loading" id="loadingState">
     <div class="spinner"></div>
@@ -347,16 +382,19 @@ function collectFormData() {
 async function generateBible() {
   const d = collectFormData();
   const name = d.name || "Friend";
+  const bizName = d.bizName && d.bizName.toLowerCase() !== "no, suggest one for me!" ? d.bizName : "";
+  const titleName = bizName ? bizName : name;
+
   document.getElementById("bbForm").style.display = "none";
   document.getElementById("bbNav").style.display = "none";
   document.getElementById("resultWrap").classList.add("active");
   document.getElementById("loadingState").style.display = "block";
   document.getElementById("resultState").style.display = "none";
   document.getElementById("errorState").style.display = "none";
-  document.getElementById("resultName").textContent = name + "'s Brand Bible";
+  document.getElementById("resultName").textContent = titleName + "'s Brand Bible";
   window.scrollTo(0, 0);
 
-  const prompt = `You are Joy from The Ministry of Business — a faith-driven business and brand coach. Write in plain text only. NO markdown symbols like # ## * ** ever. Use ALL CAPS for section headers. Use dashes for bullet points. Be TIGHT, SPECIFIC, and ACTIONABLE. Every line should help them DO something today. Reference their exact answers throughout — never be generic. Speak directly to them using their name.
+  const prompt = `You are Joy from The Ministry of Business — a faith-driven business and brand coach. Write in plain text only. NO markdown symbols like # ## * ** ever. Use ALL CAPS for section headers. Use dashes for bullet points. Be TIGHT, SPECIFIC, and ACTIONABLE. Every line should help them DO something today. Reference their exact answers throughout — never be generic. Speak directly to them using their name. Always say "Brand Bible" together — never "Bible" alone.
 
 CLIENT ANSWERS:
 Name: ${d.name || "Friend"}
@@ -369,27 +407,28 @@ Their WHY: ${d.why || "Not provided"}
 Feel Do Become: ${d.feelDoBecome || "Not provided"}
 Brand Personality: ${d.personality || "Not provided"}
 Never Words: ${d.neverWords || "Not provided"}
-Income Goal and 90 Days: ${d.incomeGoal || "Not provided"}
+Income Goal (overall): ${d.incomeGoal || "Not provided"}
+90-Day Goal: ${d.goal90 || "Not provided"}
 Big Vision: ${d.bigVision || "Not provided"}
 Obstacles: ${d.obstacles || "Not provided"}
 What Hasn't Worked: ${d.triedBefore || "Not provided"}
 Work Schedule: ${d.workSchedule || "Not provided"}
-What They Hope to Get: ${d.bigHope || "Not provided"}
 Social Media: ${d.socialMedia || "Not provided"}
 Dream Aesthetic: ${d.aesthetic || "Not provided"}
 Colors: ${d.currentColors || "Not provided"}
-Content Style and Frequency: ${d.contentType || "Not provided"}
+Posting Frequency: ${d.postFrequency || "Not provided"}
+Content Style: ${d.contentType || "Not provided"}
 Content Topics: ${d.contentTopics || "Not provided"}
-Secret Sauce Hope: ${d.secretSauce || "Not provided"}
+What They Hope to Get: ${d.secretSauce || "Not provided"}
 
-Write their complete Brand Bible. Every section must deliver on what was promised in the questions. If they asked for a business name suggestion — give one. If they have no colors — suggest specific ones. If they have no social media — tell them exactly where to start. If they shared what they hope to get — address it directly. Make them feel like God sent a coach with a personalized blueprint that covers everything they've been struggling to figure out.
+Write their complete Brand Bible. Every section must deliver on what was promised in the questions. If they asked for a business name suggestion — give one. If they have no colors — suggest specific ones. If they have no social media — tell them exactly where to start. If they shared what they hope to get — address it directly. Make them feel like God sent a coach with a personalized blueprint that covers everything they've been struggling to figure out. Never say "Bible" alone — always say "Brand Bible."
 
-💛 ${name.toUpperCase()}'S BRAND BIBLE
+💛 ${titleName.toUpperCase()}'S BRAND BIBLE
 Built by The Ministry of Business
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
 A WORD BEFORE WE BEGIN
-[2-3 sentences. Use their name. Reference their specific WHY and what they hope to get from this Bible. Make them feel completely seen and ready to take action. Sign it: xo Joy, The Ministry of Business 💛]
+[2-3 sentences. Use their name. Reference their specific WHY and what they hope to get from this Brand Bible. Make them feel completely seen and ready to take action. Sign it: xo Joy, The Ministry of Business 💛]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -399,7 +438,8 @@ You Help: [who + what + result — one powerful sentence]
 Your Promise: I help [who] go from [before] to [after] so they can [result]
 Your Superpower: [what makes them undeniably different — one bold specific sentence]
 Your Stage: [their stage + one sentence about what this means strategically for them right now]
-DO THIS NOW: Write your promise on a sticky note and put it where you see it every single day. Every post, every conversation, every offer should prove this promise is real.
+
+YOUR NEXT STEPS: Write your promise on a sticky note and put it where you see it every single day. Every post, every conversation, every offer should prove this promise is real.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -417,7 +457,7 @@ Your Proof Points:
 - BUILD THIS: [one specific action to gain more proof]
 - BUILD THIS: [one more specific action]
 
-DO THIS THIS WEEK: Post your 3-sentence brand story as your next caption. Start with "I started this because..." or "There was a moment when..." That is your most powerful post. Do it this week.
+TRY THIS: Post your 3-sentence brand story as your next caption. Start with "I started this because..." or "There was a moment when..." That is your most powerful post. Do it this week.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -436,7 +476,7 @@ NEVER SAY THIS:
 - [clashes with their vibe]
 - [one more specific to their business]
 
-HOW TO USE THIS: Before you post anything — read it out loud. Does it sound like you talking to your best friend? If it sounds stiff or generic — rewrite it using the phrases above. Your voice is your brand. Protect it.
+YOUR NEXT STEPS: Before you post anything — read it out loud. Does it sound like you talking to your best friend? If it sounds stiff or generic — rewrite it using the phrases above. Your voice is your brand. Protect it.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -452,7 +492,7 @@ YOUR FONTS (free on Canva):
 
 YOUR AESTHETIC IN ONE SENTENCE: [vivid and specific — what should their brand look like visually]
 
-DO THIS TODAY: Open Canva and go to Brand Kit. Enter these exact colors and fonts. Use them on every single post from today forward. Consistency builds recognition. Recognition builds trust. Trust builds sales.
+TRY THIS: Open Canva and go to Brand Kit. Enter these exact colors and fonts. Use them on every single post from today forward. Consistency builds recognition. Recognition builds trust. Trust builds sales.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -469,15 +509,15 @@ YOUR LINKS:
 
 YOUR PLATFORM FOCUS: [one platform + exactly why this one first based on their business type and audience]
 
-DO THIS THIS WEEK:
+YOUR NEXT STEPS:
 - Update your bio with the exact text above right now — takes 2 minutes
-- Post 3 times using your content pillars below
+- Post 3 times this week using your content pillars below
 - Respond to every comment within 2 hours for the next 30 days — this signals the algorithm and builds community
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
 SECTION 6: YOUR OFFER LADDER
-Build these in order. Finish one before starting the next. This is how you get to [their income goal].
+Build these in order. Finish one before starting the next. This is how you get to [their overall income goal].
 
 FREEBIE — Build your email list first:
 - Name: [specific compelling freebie name tied to their business]
@@ -505,19 +545,19 @@ OFFER 3 — YOUR PREMIUM OFFER:
 - Price: $[specific range]
 - This is your path to: [their income goal]
 
-THE MATH TO [their income goal]: [3 specific sentences showing realistic numbers — how many sales of which offers gets them there]
+THE MATH TO [their overall income goal]: [3 specific sentences showing realistic numbers — how many sales of which offers gets them there]
 
-DO THIS NOW: Pick ONE offer. Set a 30-day deadline. Tell someone you trust so they hold you accountable. Nothing else until this is done.
+YOUR NEXT STEPS: Pick ONE offer. Set a 30-day deadline. Tell someone you trust so they hold you accountable. Nothing else until this one is done.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
 SECTION 7: YOUR CONTENT STRATEGY
-YOUR 5 CONTENT PILLARS — rotate one per post every week:
-1. [Pillar name]: [what to create] — Post this week: "[specific post idea for their exact business]"
-2. [Pillar name]: [what to create] — Post this week: "[specific post idea]"
-3. [Pillar name]: [what to create] — Post this week: "[specific post idea]"
-4. [Pillar name]: [what to create] — Post this week: "[specific post idea]"
-5. [Pillar name]: [what to create] — Post this week: "[specific post idea]"
+YOUR 5 CONTENT PILLARS — rotate through these every week. Each pillar includes how often to post it:
+1. [Pillar name] ([post X times per week or per month — be specific]): [what to create for this pillar] — Post this week: "[specific post idea for their exact business]"
+2. [Pillar name] ([post X times per week or per month]): [what to create] — Post this week: "[specific post idea]"
+3. [Pillar name] ([post X times per week or per month]): [what to create] — Post this week: "[specific post idea]"
+4. [Pillar name] ([post X times per week or per month]): [what to create] — Post this week: "[specific post idea]"
+5. [Pillar name] ([post X times per week or per month — NOTE: selling content should be no more than once every 4 weeks]): [what to create] — Post this week: "[specific post idea]"
 
 YOUR REALISTIC POSTING SCHEDULE:
 - Post [X times per week — based on their stated availability]
@@ -532,39 +572,39 @@ YOUR FIRST 5 POSTS — WRITE THESE THIS WEEK:
 5. [Specific post idea with exact caption direction]
 
 YOUR HASHTAGS — COPY THESE ON EVERY POST:
-[10 specific hashtags for their exact niche — no generic ones]
+[10 specific hashtags for their exact niche — no generic ones, no # symbol, just the words separated by spaces]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
-SECTION 8: YOUR WEEKLY WORK SCHEDULE
+SECTION 8: YOUR WEEKLY WORK PLAN
 YOUR PROTECTED TIME: [their specific day and hours from their answers]
 
 WHAT TO DO EACH WEEK — ROTATE THIS PLAN:
 - Week 1: Create and schedule content for the week — use your 5 pillars above
 - Week 2: Work on your current offer — write one section, record one video, or design one graphic
 - Week 3: Engage and grow — comment on 5 accounts in your niche every day this week
-- Week 4: Review results, update one thing in this Bible, and plan next month
+- Week 4: Review results, update one thing in this Brand Bible, and plan next month
 
 HOW TO USE AI TO WORK SMARTER IN YOUR PROTECTED TIME:
-- Write 4 captions in 10 minutes: give AI your content pillar + ask for 4 versions in your brand voice
-- Build your freebie in 1 hour: describe your topic + ask for a complete outline then fill in your stories
-- Write your bio 5 ways in 5 minutes: paste your promise + ask for 5 bio variations then pick the best
-- Plan 30 days of content: paste your 5 pillars + ask for 30 specific post ideas for your business
-- Handle objections: paste your offer description + ask for the top 10 objections and how to answer them
+- Write 4 captions in 10 minutes: give AI your content pillar and ask for 4 versions in your brand voice
+- Build your freebie in 1 hour: describe your topic and ask for a complete outline then fill in your stories
+- Write your bio 5 ways in 5 minutes: paste your promise and ask for 5 bio variations then pick the best
+- Plan 30 days of content: paste your 5 pillars and ask for 30 specific post ideas for your business
+- Handle objections: paste your offer description and ask for the top 10 objections and how to answer them
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
 SECTION 9: YOUR 90-DAY ACTION PLAN
 
-DAYS 1-30 — FOUNDATION
-Goal: [specific measurable target tied to their 90-day goal]
+DAYS 1–30 — FOUNDATION
+Goal: [specific measurable target tied to their stated 90-day goal]
 Week 1: [specific daily and weekly actions]
 Week 2: [specific actions]
 Week 3: [specific actions]
 Week 4: [specific actions]
 You WIN this month when: [specific measurable milestone]
 
-DAYS 31-60 — MOMENTUM
+DAYS 31–60 — MOMENTUM
 Goal: [specific measurable target]
 Week 5: [specific actions]
 Week 6: [specific actions]
@@ -572,7 +612,7 @@ Week 7: [specific actions]
 Week 8: [specific actions]
 You WIN this month when: [specific measurable milestone]
 
-DAYS 61-90 — GROWTH
+DAYS 61–90 — GROWTH
 Goal: [specific measurable target]
 Week 9: [specific actions]
 Week 10: [specific actions]
@@ -596,9 +636,9 @@ A CLOSING WORD FROM JOY
 
 [2-3 sentences that speak directly to their specific struggle and obstacle from their answers. Acknowledge what has been hard. Then speak faith and strategy over them specifically.]
 
-[1-2 sentences addressing exactly what they said they hoped to get from this Bible — confirm that they now have it and remind them the only missing piece is action.]
+[1-2 sentences addressing exactly what they said they hoped to get from this Brand Bible — confirm that they now have it and remind them the only missing piece is action.]
 
-Everything you need is in this Bible. The strategy is here. The schedule is here. The offers are here. The only ingredient that was never missing was YOU — and you just showed up.
+Everything you need is in this Brand Bible. The strategy is here. The schedule is here. The offers are here. The only ingredient that was never missing was YOU — and you just showed up.
 
 Don't just build a business. Build a BRAND. Build so you can rest in what God has placed inside of you, so you can LIVE.
 
@@ -625,14 +665,14 @@ Ready to go deeper? Everything The Ministry of Business has built for you is at 
     for (let line of lines) {
       line = line.trim();
       if (!line) { html += "<br>"; continue; }
-      if (line.includes("━━━")) { html += "<hr style=\"border:none;border-top:2px solid rgba(201,168,76,0.3);margin:1.5rem 0;\">"; continue; }
-      if (line.match(/^💛.*BRAND BIBLE$/)) { html += "<h1 style=\"font-family:Playfair Display,serif;color:#2D5016;font-size:24px;font-weight:600;text-align:center;margin:1rem 0 0.25rem;\">" + line + "</h1>"; continue; }
+      if (line.includes("━━━")) { html += "<hr style=\"border:none;border-top:2px solid rgba(201,168,76,0.3);margin:1.25rem 0;\">"; continue; }
+      if (line.match(/^💛.*BRAND BIBLE$/i)) { html += "<h1 style=\"font-family:Playfair Display,serif;color:#2D5016;font-size:23px;font-weight:600;text-align:center;margin:1rem 0 0.2rem;\">" + line + "</h1>"; continue; }
       if (line === "Built by The Ministry of Business") { html += "<p style=\"text-align:center;color:#C9A84C;font-size:13px;margin-bottom:1.5rem;letter-spacing:0.05em;\">" + line + "</p>"; continue; }
-      if (line.match(/^SECTION \d+:/) || line.match(/^YOUR NEXT|^A CLOSING/)) { html += "<h2 style=\"font-family:Playfair Display,serif;color:#2D5016;font-size:18px;font-weight:500;margin:1.75rem 0 0.75rem;padding-bottom:0.25rem;border-bottom:1px solid rgba(201,168,76,0.2);\">" + line + "</h2>"; continue; }
-      if (line.match(/^DO THIS|^A WORD BEFORE|^DAYS \d|^PHASE/)) { html += "<h3 style=\"font-family:Playfair Display,serif;color:#2D5016;font-size:15px;font-weight:500;margin:1.25rem 0 0.5rem;\">" + line + "</h3>"; continue; }
-      if (line.startsWith("- ")) { html += "<p style=\"margin:0.4rem 0 0.4rem 1.5rem;color:#1A1A1A;line-height:1.6;\">• " + line.substring(2) + "</p>"; continue; }
-      if (line.match(/^\d+\. /)) { html += "<p style=\"margin:0.5rem 0 0.5rem 1.5rem;color:#1A1A1A;line-height:1.6;font-weight:500;\">" + line + "</p>"; continue; }
-      html += "<p style=\"margin:0.4rem 0;color:#1A1A1A;line-height:1.7;\">" + line + "</p>";
+      if (line.match(/^SECTION \d+:/)) { html += "<h2 style=\"font-family:Playfair Display,serif;color:#2D5016;font-size:17px;font-weight:500;margin:1.5rem 0 0.6rem;padding-bottom:0.2rem;border-bottom:1px solid rgba(201,168,76,0.2);\">" + line + "</h2>"; continue; }
+      if (line.match(/^YOUR NEXT STEPS|^TRY THIS|^A WORD BEFORE|^A CLOSING WORD|^DAYS \d|^YOUR NEXT 3/)) { html += "<h3 style=\"font-family:Playfair Display,serif;color:#2D5016;font-size:14.5px;font-weight:500;margin:1.1rem 0 0.4rem;\">" + line + "</h3>"; continue; }
+      if (line.startsWith("- ")) { html += "<p style=\"margin:0.35rem 0 0.35rem 1.4rem;color:#1A1A1A;line-height:1.6;\">• " + line.substring(2) + "</p>"; continue; }
+      if (line.match(/^\d+\. /)) { html += "<p style=\"margin:0.45rem 0 0.45rem 1.4rem;color:#1A1A1A;line-height:1.6;font-weight:500;\">" + line + "</p>"; continue; }
+      html += "<p style=\"margin:0.35rem 0;color:#1A1A1A;line-height:1.7;\">" + line + "</p>";
     }
     document.getElementById("resultContent").innerHTML = html;
 
@@ -649,7 +689,7 @@ function copyResult() {
   const text = el.innerText || el.textContent;
   navigator.clipboard.writeText(text).then(function() {
     const btn = document.querySelector(".btn-copy");
-    btn.textContent = "Copied!";
+    btn.textContent = "Copied! 💛";
     setTimeout(function() { btn.textContent = "Copy My Brand Bible"; }, 2000);
   });
 }
