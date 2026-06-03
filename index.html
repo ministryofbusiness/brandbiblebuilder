@@ -7,1073 +7,337 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
 :root {
-  --gold: #C9A84C;
-  --gold-light: #F5E6C0;
-  --gold-dark: #8B6914;
-  --green: #2D5016;
-  --green-mid: #4A7C2F;
-  --green-light: #EAF2E3;
-  --cream: #FAF7F0;
-  --text: #1A1A1A;
-  --text-muted: #6B6B6B;
-  --border: rgba(201, 168, 76, 0.3);
-  --white: #ffffff;
+  --gold: #C9A84C; --gold-light: #F5E6C0; --gold-dark: #8B6914;
+  --green: #2D5016; --green-mid: #4A7C2F; --cream: #FAF7F0;
+  --text: #1A1A1A; --text-muted: #6B6B6B; --border: rgba(201,168,76,0.3); --white: #ffffff;
 }
-
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--cream);
-  min-height: 100vh;
-  color: var(--text);
-}
-
-.container {
-  max-width: 680px;
-  margin: 0 auto;
-  padding-bottom: 3rem;
-}
-
-.hero {
-  background: var(--green);
-  padding: 2.5rem 2rem 2rem;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -40px; left: -40px;
-  width: 180px; height: 180px;
-  border-radius: 50%;
-  background: rgba(201,168,76,0.08);
-}
-
-.badge {
-  display: inline-block;
-  background: rgba(201,168,76,0.15);
-  color: var(--gold);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 5px 14px;
-  border-radius: 20px;
-  border: 1px solid rgba(201,168,76,0.3);
-  margin-bottom: 1rem;
-}
-
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 32px;
-  font-weight: 600;
-  color: white;
-  line-height: 1.2;
-  margin-bottom: 0.4rem;
-}
-
+body { font-family: "DM Sans", sans-serif; background: var(--cream); color: var(--text); }
+.container { max-width: 680px; margin: 0 auto; padding-bottom: 3rem; }
+.hero { background: var(--green); padding: 2.5rem 2rem 2rem; text-align: center; }
+.badge { display: inline-block; background: rgba(201,168,76,0.15); color: var(--gold); font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; border: 1px solid rgba(201,168,76,0.3); margin-bottom: 1rem; }
+.hero h1 { font-family: "Playfair Display", serif; font-size: 32px; font-weight: 600; color: white; line-height: 1.2; margin-bottom: 0.4rem; }
 .hero h1 span { color: var(--gold); }
-
-.hero-sub {
-  font-size: 14px;
-  color: rgba(255,255,255,0.7);
-  font-weight: 300;
-  margin-bottom: 1.5rem;
-}
-
-.manifesto {
-  background: rgba(201,168,76,0.1);
-  border: 1px solid rgba(201,168,76,0.25);
-  border-radius: 12px;
-  padding: 1.25rem 1.5rem;
-  max-width: 520px;
-  margin: 0 auto;
-}
-
-.manifesto p {
-  font-family: 'Playfair Display', serif;
-  font-size: 14px;
-  color: rgba(255,255,255,0.9);
-  line-height: 1.8;
-  font-style: italic;
-}
-
-.manifesto p strong {
-  color: var(--gold);
-  font-style: normal;
-  font-weight: 500;
-}
-
-.manifesto-attr {
-  font-family: 'DM Sans', sans-serif !important;
-  font-style: normal !important;
-  font-size: 12px !important;
-  opacity: 0.7;
-  margin-top: 0.5rem;
-  display: block;
-}
-
-.notice {
-  background: #FFF8E7;
-  border-left: 4px solid var(--gold);
-  padding: 1rem 1.25rem;
-  margin: 1.5rem;
-  border-radius: 0 8px 8px 0;
-}
-
-.notice p {
-  font-size: 13px;
-  color: #7A5C00;
-  line-height: 1.6;
-}
-
-.progress-wrap {
-  padding: 1.25rem 1.5rem 0;
-}
-
-.progress-top {
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  color: var(--text-muted);
-  margin-bottom: 6px;
-}
-
-.progress-bar {
-  height: 5px;
-  background: rgba(201,168,76,0.15);
-  border-radius: 3px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--green), var(--gold));
-  border-radius: 3px;
-  transition: width 0.4s ease;
-}
-
-.section {
-  display: none;
-  padding: 1.5rem;
-  animation: fadeUp 0.3s ease;
-}
-
+.hero-sub { font-size: 14px; color: rgba(255,255,255,0.7); font-weight: 300; margin-bottom: 1.5rem; }
+.manifesto { background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.25); border-radius: 12px; padding: 1.25rem 1.5rem; max-width: 520px; margin: 0 auto; }
+.manifesto p { font-family: "Playfair Display", serif; font-size: 14px; color: rgba(255,255,255,0.9); line-height: 1.8; font-style: italic; }
+.manifesto p strong { color: var(--gold); font-style: normal; font-weight: 500; }
+.notice { background: #FFF8E7; border-left: 4px solid var(--gold); padding: 1rem 1.25rem; margin: 1.5rem; border-radius: 0 8px 8px 0; }
+.notice p { font-size: 13px; color: #7A5C00; line-height: 1.6; }
+.progress-wrap { padding: 1.25rem 1.5rem 0; }
+.progress-top { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-muted); margin-bottom: 6px; }
+.progress-bar { height: 5px; background: rgba(201,168,76,0.15); border-radius: 3px; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, var(--green), var(--gold)); border-radius: 3px; transition: width 0.4s ease; }
+.section { display: none; padding: 1.5rem; animation: fadeUp 0.3s ease; }
 .section.active { display: block; }
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.section-num {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--gold-dark);
-  margin-bottom: 4px;
-}
-
-.section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 24px;
-  font-weight: 500;
-  color: var(--green);
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
-}
-
-.field {
-  margin-bottom: 1.25rem;
-}
-
-label.field-label {
-  display: block;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text);
-  margin-bottom: 6px;
-  line-height: 1.5;
-  cursor: default;
-}
-
-.hint {
-  display: block;
-  font-size: 12px;
-  font-weight: 400;
-  color: var(--text-muted);
-  margin-top: 3px;
-  line-height: 1.5;
-}
-
-input[type="text"],
-textarea,
-select {
-  width: 100%;
-  padding: 10px 14px;
-  border: 1.5px solid var(--border);
-  border-radius: 8px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  color: var(--text);
-  background: var(--white);
-  transition: border-color 0.2s, box-shadow 0.2s;
-  outline: none;
-  -webkit-appearance: none;
-}
-
-input[type="text"]:focus,
-textarea:focus,
-select:focus {
-  border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
-}
-
-textarea {
-  resize: vertical;
-  min-height: 85px;
-  line-height: 1.6;
-}
-
-.radio-group,
-.check-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.radio-item,
-.check-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 10px 14px;
-  border: 1.5px solid var(--border);
-  border-radius: 8px;
-  cursor: pointer;
-  background: var(--white);
-  transition: all 0.15s;
-  user-select: none;
-}
-
-.radio-item:hover,
-.check-item:hover {
-  border-color: var(--gold);
-  background: #FFFBF0;
-}
-
-.radio-item input[type="radio"],
-.check-item input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
-  min-width: 16px;
-  margin-top: 2px;
-  accent-color: var(--green);
-  cursor: pointer;
-}
-
-.radio-item span,
-.check-item span {
-  font-size: 14px;
-  color: var(--text);
-  line-height: 1.4;
-}
-
-.confidence-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 6px;
-}
-
-.confidence-grid .radio-item {
-  flex-direction: column;
-  align-items: center;
-  padding: 10px 6px;
-  text-align: center;
-}
-
-.nav {
-  display: flex;
-  gap: 10px;
-  padding: 0.5rem 1.5rem 1rem;
-}
-
-.btn-back {
-  flex: 1;
-  padding: 13px;
-  border: 1.5px solid var(--border);
-  border-radius: 8px;
-  background: var(--white);
-  color: var(--text-muted);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.15s;
-}
-
-.btn-back:hover {
-  border-color: var(--gold);
-  color: var(--text);
-}
-
-.btn-next {
-  flex: 2;
-  padding: 13px;
-  border: none;
-  border-radius: 8px;
-  background: var(--green);
-  color: white;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.15s;
-}
-
+@keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.section-num { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 4px; }
+.section-title { font-family: "Playfair Display", serif; font-size: 24px; font-weight: 500; color: var(--green); margin-bottom: 1.5rem; line-height: 1.2; }
+.field { margin-bottom: 1.25rem; }
+label.field-label { display: block; font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 6px; line-height: 1.5; cursor: default; }
+.hint { display: block; font-size: 12px; font-weight: 400; color: var(--text-muted); margin-top: 3px; line-height: 1.5; }
+input[type="text"], textarea, select { width: 100%; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-family: "DM Sans", sans-serif; font-size: 14px; color: var(--text); background: var(--white); transition: border-color 0.2s; outline: none; }
+input[type="text"]:focus, textarea:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.12); }
+textarea { resize: vertical; min-height: 85px; line-height: 1.6; }
+.radio-group, .check-group { display: flex; flex-direction: column; gap: 8px; }
+.radio-item, .check-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px; cursor: pointer; background: var(--white); transition: all 0.15s; user-select: none; }
+.radio-item:hover, .check-item:hover { border-color: var(--gold); background: #FFFBF0; }
+.radio-item input[type="radio"], .check-item input[type="checkbox"] { width: 16px; height: 16px; min-width: 16px; margin-top: 2px; accent-color: var(--green); cursor: pointer; }
+.radio-item span, .check-item span { font-size: 14px; color: var(--text); line-height: 1.4; }
+.nav { display: flex; gap: 10px; padding: 0.5rem 1.5rem 1rem; }
+.btn-back { flex: 1; padding: 13px; border: 1.5px solid var(--border); border-radius: 8px; background: var(--white); color: var(--text-muted); font-family: "DM Sans", sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.15s; }
+.btn-back:hover { border-color: var(--gold); color: var(--text); }
+.btn-next { flex: 2; padding: 13px; border: none; border-radius: 8px; background: var(--green); color: white; font-family: "DM Sans", sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.15s; }
 .btn-next:hover { background: var(--green-mid); }
-
-.closing-box {
-  background: var(--green);
-  border-radius: 14px;
-  padding: 2rem;
-  text-align: center;
-  margin-top: 1.5rem;
-}
-
-.closing-box h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  color: white;
-  margin-bottom: 0.75rem;
-}
-
-.closing-box p {
-  font-size: 13px;
-  color: rgba(255,255,255,0.8);
-  line-height: 1.7;
-  margin-bottom: 0.75rem;
-}
-
-.closing-box .quote {
-  font-family: 'Playfair Display', serif;
-  font-size: 14px;
-  color: var(--gold);
-  font-style: italic;
-  line-height: 1.7;
-  margin: 1rem 0;
-}
-
-.btn-generate {
-  width: 100%;
-  padding: 16px;
-  border: none;
-  border-radius: 10px;
-  background: var(--gold);
-  color: white;
-  font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s;
-  margin-top: 1rem;
-  letter-spacing: 0.02em;
-}
-
-.btn-generate:hover {
-  background: var(--gold-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(201,168,76,0.3);
-}
-
-.result-wrap {
-  display: none;
-  padding: 1.5rem;
-}
-
+.closing-box { background: var(--green); border-radius: 14px; padding: 2rem; text-align: center; margin-top: 1.5rem; }
+.closing-box h3 { font-family: "Playfair Display", serif; font-size: 22px; color: white; margin-bottom: 0.75rem; }
+.closing-box p { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 0.75rem; }
+.closing-box .quote { font-family: "Playfair Display", serif; font-size: 14px; color: var(--gold); font-style: italic; line-height: 1.7; margin: 1rem 0; }
+.btn-generate { width: 100%; padding: 16px; border: none; border-radius: 10px; background: var(--gold); color: white; font-family: "Playfair Display", serif; font-size: 20px; font-weight: 500; cursor: pointer; transition: all 0.2s; margin-top: 1rem; }
+.btn-generate:hover { background: var(--gold-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201,168,76,0.3); }
+.result-wrap { display: none; padding: 1.5rem; }
 .result-wrap.active { display: block; }
-
-.loading {
-  text-align: center;
-  padding: 3rem 1rem;
-}
-
-.spinner {
-  width: 48px;
-  height: 48px;
-  border: 3px solid var(--gold-light);
-  border-top-color: var(--gold);
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-  margin: 0 auto 1.25rem;
-}
-
+.loading { text-align: center; padding: 3rem 1rem; }
+.spinner { width: 48px; height: 48px; border: 3px solid var(--gold-light); border-top-color: var(--gold); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 1.25rem; }
 @keyframes spin { to { transform: rotate(360deg); } }
-
-.loading h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  color: var(--green);
-  margin-bottom: 0.5rem;
-}
-
-.loading p {
-  font-size: 13px;
-  color: var(--text-muted);
-}
-
-.result-header {
-  background: var(--green);
-  border-radius: 12px;
-  padding: 1.75rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-.result-header h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 26px;
-  color: white;
-  margin-bottom: 0.35rem;
-}
-
-.result-header p {
-  font-size: 13px;
-  color: rgba(255,255,255,0.7);
-}
-
-.result-content {
-  background: white;
-  border: 1.5px solid var(--border);
-  border-radius: 12px;
-  padding: 1.75rem;
-  font-size: 14px;
-  line-height: 1.85;
-  color: var(--text);
-  white-space: pre-wrap;
-  word-break: break-word;
-  font-family: 'DM Sans', sans-serif;
-}
-
-.result-actions {
-  display: flex;
-  gap: 10px;
-  margin-top: 1rem;
-}
-
-.btn-copy {
-  flex: 1;
-  padding: 13px;
-  background: var(--green);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.15s;
-}
-
-.btn-copy:hover { background: var(--green-mid); }
-
-.btn-print {
-  flex: 1;
-  padding: 13px;
-  background: white;
-  color: var(--green);
-  border: 1.5px solid var(--border);
-  border-radius: 8px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.15s;
-}
-
-.btn-print:hover { border-color: var(--gold); }
-
-.error-box {
-  background: #FFF0F0;
-  border: 1px solid #FFCCCC;
-  border-radius: 8px;
-  padding: 1rem;
-  font-size: 13px;
-  color: #CC0000;
-  margin-top: 1rem;
-  display: none;
-}
-
-@media print {
-  .hero, .notice, .progress-wrap, .nav, .result-actions, .result-header { display: none !important; }
-  .result-content { border: none; padding: 0; }
-}
+.loading h3 { font-family: "Playfair Display", serif; font-size: 20px; color: var(--green); margin-bottom: 0.5rem; }
+.loading p { font-size: 13px; color: var(--text-muted); }
+.result-header { background: var(--green); border-radius: 12px; padding: 1.75rem; margin-bottom: 1.5rem; text-align: center; }
+.result-header h2 { font-family: "Playfair Display", serif; font-size: 26px; color: white; margin-bottom: 0.35rem; }
+.result-header p { font-size: 13px; color: rgba(255,255,255,0.7); }
+.result-content { background: white; border: 1.5px solid var(--border); border-radius: 12px; padding: 1.75rem; font-size: 14px; line-height: 1.85; color: var(--text); }
+.result-actions { display: flex; gap: 10px; margin-top: 1rem; }
+.btn-copy { flex: 1; padding: 13px; background: var(--green); color: white; border: none; border-radius: 8px; font-family: "DM Sans", sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; }
+.btn-print { flex: 1; padding: 13px; background: white; color: var(--green); border: 1.5px solid var(--border); border-radius: 8px; font-family: "DM Sans", sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; }
+.error-box { background: #FFF0F0; border: 1px solid #FFCCCC; border-radius: 8px; padding: 1rem; font-size: 13px; color: #CC0000; margin-top: 1rem; display: none; }
+@media print { .hero, .notice, .progress-wrap, .nav, .result-actions, .result-header { display: none !important; } .result-content { border: none; padding: 0; } }
 </style>
 </head>
 <body>
-
 <div class="container">
 
-  <div class="hero">
-    <div class="badge">The Ministry of Business</div>
-    <h1>The Brand Bible <span>Builder</span></h1>
-    <p class="hero-sub">Go from Business to Brand</p>
-    <div class="manifesto">
-      <p>"Don't just build a business. Build a <strong>BRAND</strong>. Build so you can rest in what God has placed inside of you, so you can <strong>LIVE</strong>."<br>
-      <span class="manifesto-attr">— Joy, The Ministry of Business</span></p>
-    </div>
+<div class="hero">
+  <div class="badge">The Ministry of Business</div>
+  <h1>The Brand Bible <span>Builder</span></h1>
+  <p class="hero-sub">Go from Business to Brand</p>
+  <div class="manifesto">
+    <p>"Don't just build a business. Build a <strong>BRAND</strong>. Build so you can rest in what God has placed inside of you, so you can <strong>LIVE</strong>."<br>
+    <span style="font-family:DM Sans,sans-serif;font-style:normal;font-size:12px;opacity:0.7;">— Joy, The Ministry of Business</span></p>
+  </div>
+</div>
+
+<div class="notice">
+  <p><strong>Before you begin —</strong> This Brand Bible Builder is designed for <strong>ONE business at a time</strong>. If you're a multi-passionate entrepreneur with several ideas — we see you! But trust us, the magic happens when you FOCUS. Pick the ONE business you're most committed to right now and answer every question with THAT business in mind. You can always come back and build a Brand Bible for your next business later! 💛</p>
+</div>
+
+<div class="progress-wrap">
+  <div class="progress-top">
+    <span id="progressLabel">Section 1 of 4</span>
+    <span id="progressPct">25%</span>
+  </div>
+  <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:25%"></div></div>
+</div>
+
+<form id="bbForm" autocomplete="off">
+
+<!-- SECTION 1 -->
+<div class="section active" data-section="1">
+  <div class="section-num">Section 1 of 4</div>
+  <div class="section-title">Your Business Blueprint</div>
+
+  <div class="field">
+    <label class="field-label" for="name">Hey there! Let's start with YOU — what's your name?</label>
+    <input type="text" id="name" name="name" placeholder="Your first name..." />
   </div>
 
-  <div class="notice">
-    <p><strong>Before you begin —</strong> This Brand Bible Builder is designed for <strong>ONE business at a time</strong>. If you're a multi-passionate entrepreneur with several ideas — we see you! But trust us, the magic happens when you FOCUS. Pick the ONE business you're most committed to right now and answer every question with THAT business in mind. You can always come back and build a Brand Bible for your next business later! 💛</p>
+  <div class="field">
+    <label class="field-label" for="bizName">Do you have a business name?
+      <span class="hint">If yes, what is it? If no, would you like us to suggest one?</span>
+    </label>
+    <input type="text" id="bizName" name="bizName" placeholder="My Business Name / No, suggest one for me!" />
   </div>
 
-  <div class="progress-wrap">
-    <div class="progress-top">
-      <span id="progressLabel">Section 1 of 8</span>
-      <span id="progressPct">12%</span>
-    </div>
-    <div class="progress-bar">
-      <div class="progress-fill" id="progressFill" style="width:12%"></div>
-    </div>
+  <div class="field">
+    <label class="field-label" for="bizDesc">What does your business do and what do you sell?
+      <span class="hint">Still planning? Tell us what you're working toward!</span>
+    </label>
+    <textarea id="bizDesc" name="bizDesc" placeholder="My business..."></textarea>
   </div>
 
-  <form id="bbForm" autocomplete="off">
-
-    <!-- SECTION 1 -->
-    <div class="section active" data-section="1">
-      <div class="section-num">Section 1</div>
-      <div class="section-title">Your Business Blueprint</div>
-
-      <div class="field">
-        <label class="field-label" for="name">Hey there! Let's start with YOU — what's your name?</label>
-        <input type="text" id="name" name="name" placeholder="Your first name..." />
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="bizName">Do you have a business name?
-          <span class="hint">If yes, what is it? If no, would you like us to suggest one?</span>
-        </label>
-        <input type="text" id="bizName" name="bizName" placeholder="My Business Name / No, suggest one for me!" />
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="bizDesc">Tell us what your business does in one sentence — what do you offer?</label>
-        <textarea id="bizDesc" name="bizDesc" placeholder="I help..."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="idealClient">Who do you serve? Describe your ideal customer or client.</label>
-        <textarea id="idealClient" name="idealClient" placeholder="My ideal customer is..."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="problemSolve">What problem do you solve for them? And how do you serve your customers and clients?</label>
-        <textarea id="problemSolve" name="problemSolve" placeholder="The main problem I solve is..."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label">Is your business product based, service based, or a mix of both?</label>
-        <div class="radio-group">
-          <label class="radio-item"><input type="radio" name="bizType" value="Product based" /><span>Product based</span></label>
-          <label class="radio-item"><input type="radio" name="bizType" value="Service based" /><span>Service based</span></label>
-          <label class="radio-item"><input type="radio" name="bizType" value="Mix of both" /><span>Mix of both</span></label>
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="field-label">What stage are you at right now?</label>
-        <div class="radio-group">
-          <label class="radio-item"><input type="radio" name="bizStage" value="I just have an idea" /><span>I just have an idea</span></label>
-          <label class="radio-item"><input type="radio" name="bizStage" value="Just started (less than 1 year)" /><span>Just started (less than 1 year)</span></label>
-          <label class="radio-item"><input type="radio" name="bizStage" value="Established (1-3 years)" /><span>Established (1-3 years)</span></label>
-          <label class="radio-item"><input type="radio" name="bizStage" value="Scaling (3+ years)" /><span>Scaling (3+ years)</span></label>
-        </div>
-      </div>
-    </div>
-
-    <!-- SECTION 2 -->
-    <div class="section" data-section="2">
-      <div class="section-num">Section 2</div>
-      <div class="section-title">Your Story & Calling</div>
-
-      <div class="field">
-        <label class="field-label" for="why">What's your WHY? Why did you start this business or why do you feel called to it?</label>
-        <textarea id="why" name="why" placeholder="I started this business because..."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="story">What's your story?
-          <span class="hint">Share a win, a transformation, a milestone, or a moment that shows WHY you're the right person to serve your customers.</span>
-        </label>
-        <textarea id="story" name="story" placeholder="My story is..."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="different">What makes you different from everyone else doing what you do?</label>
-        <textarea id="different" name="different" placeholder="What sets me apart is..."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="credentials">Do you have any credentials, features, or recognition worth mentioning?
-          <span class="hint">Such as press features, certifications, years of experience, awards. Not yet? That's okay — we'll help you build toward it!</span>
-        </label>
-        <textarea id="credentials" name="credentials" placeholder="I've been featured in... / Not yet but working on it!"></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="feel">What do you want people to FEEL when they encounter your business?</label>
-        <textarea id="feel" name="feel" placeholder="I want them to feel..."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="doAction">What do you want people to DO after they encounter your business?</label>
-        <textarea id="doAction" name="doAction" placeholder="I want them to..."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="become">What do you want people to BECOME because of your business?</label>
-        <textarea id="become" name="become" placeholder="I want them to become..."></textarea>
-      </div>
-    </div>
-
-    <!-- SECTION 3 -->
-    <div class="section" data-section="3">
-      <div class="section-num">Section 3</div>
-      <div class="section-title">Your Brand Personality</div>
-
-      <div class="field">
-        <label class="field-label" for="personality">If your business were a person how would you describe their personality?
-          <span class="hint">Examples: warm and nurturing, bold and motivating, fun and energetic, calm and trustworthy, professional and polished — or describe it in your own words!</span>
-        </label>
-        <textarea id="personality" name="personality" placeholder="My business personality is..."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="vibe">What 3-5 words describe the VIBE you want your business to give off?</label>
-        <input type="text" id="vibe" name="vibe" placeholder="e.g. Bold, Faith-driven, Warm, Strategic, Joyful" />
-      </div>
-
-      <div class="field">
-        <label class="field-label">What's your communication style? How do you naturally talk to your people?</label>
-        <div class="radio-group">
-          <label class="radio-item"><input type="radio" name="commStyle" value="Conversational and friendly" /><span>Conversational and friendly</span></label>
-          <label class="radio-item"><input type="radio" name="commStyle" value="Professional and polished" /><span>Professional and polished</span></label>
-          <label class="radio-item"><input type="radio" name="commStyle" value="Bold and direct" /><span>Bold and direct</span></label>
-          <label class="radio-item"><input type="radio" name="commStyle" value="Inspirational and faith driven" /><span>Inspirational and faith driven</span></label>
-          <label class="radio-item"><input type="radio" name="commStyle" value="Mix of all of the above" /><span>Mix of all of the above</span></label>
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="admire">Name 2-3 businesses or people you admire and tell us what you love about them.</label>
-        <textarea id="admire" name="admire" placeholder="I admire... because..."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="knownFor">What do you want to be known for?
-          <span class="hint">Already in business? What are people already saying? Just starting? What do you WANT them to say?</span>
-        </label>
-        <textarea id="knownFor" name="knownFor" placeholder="I want to be known for..."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="neverWords">What words or phrases do you NEVER want associated with your business?</label>
-        <input type="text" id="neverWords" name="neverWords" placeholder="e.g. Cheap, Unprofessional, Generic..." />
-      </div>
-    </div>
-
-    <!-- SECTION 4 -->
-    <div class="section" data-section="4">
-      <div class="section-num">Section 4</div>
-      <div class="section-title">Your Goals & Vision</div>
-
-      <div class="field">
-        <label class="field-label" for="incomeGoal">What is your income goal for this business?
-          <span class="hint">Examples: replace my 9-5, earn an extra $1,000 a month, hit 6 figures, scale to 7 figures</span>
-        </label>
-        <input type="text" id="incomeGoal" name="incomeGoal" placeholder="My income goal is..." />
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="goal90">Fast forward 90 days — what has changed? What are you doing differently? What does your business look like? Paint us a picture!</label>
-        <textarea id="goal90" name="goal90" placeholder="In 90 days I will be..."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="goal1yr">It's one year from today and you're celebrating. What happened? What did you build? What are people saying about you? Tell us your victory lap moment.</label>
-        <textarea id="goal1yr" name="goal1yr" placeholder="One year from now..."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="bigVision">Close your eyes for a second. 3-5 years from now — where are you? What does your life AND your business look like? Don't hold back. Dream out loud.</label>
-        <textarea id="bigVision" name="bigVision" placeholder="In 3-5 years..."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="obstacles">Real talk — what's been getting in your way? What feels hard, confusing, or overwhelming right now? No judgment here. This is a safe space.</label>
-        <textarea id="obstacles" name="obstacles" placeholder="What's been holding me back is..."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="triedBefore">What have you already tried that hasn't worked?
-          <span class="hint">This helps us give you better direction</span>
-        </label>
-        <textarea id="triedBefore" name="triedBefore" placeholder="I've tried... but it didn't work because..."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label">Let's be realistic — how many hours per week can you dedicate to building your brand?</label>
-        <div class="radio-group">
-          <label class="radio-item"><input type="radio" name="hoursPerWeek" value="1-2 hours" /><span>1-2 hours</span></label>
-          <label class="radio-item"><input type="radio" name="hoursPerWeek" value="3-5 hours" /><span>3-5 hours</span></label>
-          <label class="radio-item"><input type="radio" name="hoursPerWeek" value="5-10 hours" /><span>5-10 hours</span></label>
-          <label class="radio-item"><input type="radio" name="hoursPerWeek" value="10+ hours" /><span>10+ hours</span></label>
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="workSchedule">Let's build your schedule! Realistically what is ONE day of the week you can protect for your business work time — and between what hours?
-          <span class="hint">Example: Tuesdays 9am-11am — This is YOUR time. Guard it! 💛</span>
-        </label>
-        <input type="text" id="workSchedule" name="workSchedule" placeholder="e.g. Tuesdays 9am-11am" />
-      </div>
-
-      <div class="field">
-        <label class="field-label">Are you building this alone or do you have support?</label>
-        <div class="radio-group">
-          <label class="radio-item"><input type="radio" name="support" value="Solo" /><span>Solo — just me!</span></label>
-          <label class="radio-item"><input type="radio" name="support" value="Business partner" /><span>Business partner</span></label>
-          <label class="radio-item"><input type="radio" name="support" value="Small team" /><span>Small team</span></label>
-          <label class="radio-item"><input type="radio" name="support" value="Virtual assistant" /><span>Virtual assistant</span></label>
-        </div>
-      </div>
-    </div>
-
-    <!-- SECTION 5 -->
-    <div class="section" data-section="5">
-      <div class="section-num">Section 5</div>
-      <div class="section-title">Your Products, Services & Income</div>
-
-      <div class="field">
-        <label class="field-label" for="products">What do you currently sell or offer? Walk us through your products or services like you're telling a friend about them.
-          <span class="hint">Still planning? Tell us what you're working toward!</span>
-        </label>
-        <textarea id="products" name="products" placeholder="I currently sell / plan to sell..."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="pricing">What do you currently charge? If you're still figuring out your pricing give us a range you're thinking.
-          <span class="hint">No judgment — we'll help you find the sweet spot!</span>
-        </label>
-        <input type="text" id="pricing" name="pricing" placeholder="e.g. $47 / $20-$50 range / Not sure yet" />
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="incomeStreams">How and where does money actually come in for your business?
-          <span class="hint">Think about the channels — online shop, in person events, social media, referrals, wholesale, brand deals, etc. Still pre-launch? Tell us how you PLAN to bring in income!</span>
-        </label>
-        <textarea id="incomeStreams" name="incomeStreams" placeholder="Money comes in through... / I plan to bring in income by..."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="sellOnline">Do you currently have a way to sell online?
-          <span class="hint">Examples: website, Stan Store, Etsy, Shopify, Instagram shop. Not yet? No worries — we'll point you in the right direction!</span>
-        </label>
-        <input type="text" id="sellOnline" name="sellOnline" placeholder="I sell on... / Not yet" />
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="bestOffer">What product or service are you most confident about or most excited to sell right now?</label>
-        <textarea id="bestOffer" name="bestOffer" placeholder="I'm most excited about..."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="unbuiltOffer">Is there a product or service you KNOW you should create but haven't yet? What's been stopping you?</label>
-        <textarea id="unbuiltOffer" name="unbuiltOffer" placeholder="I've been wanting to create... but..."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label">Do you currently EARN passive income or would you like to?
-          <span class="hint">Examples: selling digital products, online courses, templates, ebooks, printables, memberships</span>
-        </label>
-        <div class="radio-group">
-          <label class="radio-item"><input type="radio" name="passiveIncome" value="Yes I already earn passive income" /><span>Yes I already earn passive income</span></label>
-          <label class="radio-item"><input type="radio" name="passiveIncome" value="Not yet but I want to" /><span>Not yet but I want to</span></label>
-          <label class="radio-item"><input type="radio" name="passiveIncome" value="I'm not sure what passive income is" /><span>I'm not sure what passive income is</span></label>
-        </div>
-      </div>
-    </div>
-
-    <!-- SECTION 6 -->
-    <div class="section" data-section="6">
-      <div class="section-num">Section 6</div>
-      <div class="section-title">Your Presence & Aesthetic</div>
-
-      <div class="field">
-        <label class="field-label" for="socialMedia">Do you currently have any social media accounts for your business? Drop your handles or links below!
-          <span class="hint">Example: Instagram — @yourbusiness or facebook.com/yourbusiness. Have more than one? List them all! Not on social yet? No worries — we'll tell you exactly where to start.</span>
-        </label>
-        <textarea id="socialMedia" name="socialMedia" placeholder="Instagram: @... / Facebook: ... / Not yet"></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="website">Do you have a website? If yes drop the link right here!
-          <span class="hint">Example: www.yourbusiness.com — No website yet? That's okay — we'll guide you on whether you need one and the best place to start.</span>
-        </label>
-        <input type="text" id="website" name="website" placeholder="www.yourbusiness.com / Not yet" />
-      </div>
-
-      <div class="field">
-        <label class="field-label">How would you describe your current online presence?</label>
-        <div class="radio-group">
-          <label class="radio-item"><input type="radio" name="onlinePresence" value="Just getting started" /><span>Just getting started</span></label>
-          <label class="radio-item"><input type="radio" name="onlinePresence" value="Have accounts but barely post" /><span>Have accounts but barely post</span></label>
-          <label class="radio-item"><input type="radio" name="onlinePresence" value="Post sometimes but inconsistently" /><span>Post sometimes but inconsistently</span></label>
-          <label class="radio-item"><input type="radio" name="onlinePresence" value="Pretty active and consistent" /><span>Pretty active and consistent</span></label>
-          <label class="radio-item"><input type="radio" name="onlinePresence" value="Very active and growing" /><span>Very active and growing</span></label>
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="currentColors">What colors do you currently use in your business?
-          <span class="hint">If none yet that's okay — we'll help you choose!</span>
-        </label>
-        <input type="text" id="currentColors" name="currentColors" placeholder="e.g. Black and gold / No colors yet" />
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="aesthetic">How would you describe your dream aesthetic?
-          <span class="hint">Examples: clean and minimal, bold and colorful, warm and earthy, bright and feminine, dark and luxurious — feel free to use your own words!</span>
-        </label>
-        <textarea id="aesthetic" name="aesthetic" placeholder="My dream aesthetic is..."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="visualInspo">Are there any businesses or accounts whose visual style you love? Name them!</label>
-        <textarea id="visualInspo" name="visualInspo" placeholder="I love the look of..."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label">Do you currently have a logo?</label>
-        <div class="radio-group">
-          <label class="radio-item"><input type="radio" name="logo" value="Yes" /><span>Yes</span></label>
-          <label class="radio-item"><input type="radio" name="logo" value="No" /><span>No</span></label>
-          <label class="radio-item"><input type="radio" name="logo" value="Not yet but working on it" /><span>Not yet but working on it</span></label>
-        </div>
-      </div>
-    </div>
-
-    <!-- SECTION 7 -->
-    <div class="section" data-section="7">
-      <div class="section-num">Section 7</div>
-      <div class="section-title">Your Audience & Content</div>
-
-      <div class="field">
-        <label class="field-label" for="idealCustomerDeep">Describe your ideal customer like they're your best friend. What problem or concern keeps them up at night about their business? What do they dream about? What have they already tried that hasn't worked?</label>
-        <textarea id="idealCustomerDeep" name="idealCustomerDeep" placeholder="My ideal customer struggles with..."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="customerOnline">Where does your ideal customer hang out online?
-          <span class="hint">Examples: Instagram, Facebook, TikTok, Pinterest, LinkedIn, YouTube</span>
-        </label>
-        <input type="text" id="customerOnline" name="customerOnline" placeholder="They're mostly on..." />
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="mainStruggle">What does your ideal customer struggle with the most that your business solves?</label>
-        <textarea id="mainStruggle" name="mainStruggle" placeholder="Their biggest struggle is..."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label">What kind of content do you currently create or feel comfortable creating?</label>
-        <div class="check-group">
-          <label class="check-item"><input type="checkbox" name="contentType" value="Photos and graphics" /><span>Photos and graphics</span></label>
-          <label class="check-item"><input type="checkbox" name="contentType" value="Short videos and Reels" /><span>Short videos and Reels</span></label>
-          <label class="check-item"><input type="checkbox" name="contentType" value="Long form video" /><span>Long form video</span></label>
-          <label class="check-item"><input type="checkbox" name="contentType" value="Written posts and captions" /><span>Written posts and captions</span></label>
-          <label class="check-item"><input type="checkbox" name="contentType" value="Podcasts or audio" /><span>Podcasts or audio</span></label>
-          <label class="check-item"><input type="checkbox" name="contentType" value="None yet — just getting started" /><span>None yet — just getting started</span></label>
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="field-label">How often do you currently post?</label>
-        <div class="radio-group">
-          <label class="radio-item"><input type="radio" name="postFreqNow" value="Rarely or never" /><span>Rarely or never</span></label>
-          <label class="radio-item"><input type="radio" name="postFreqNow" value="When I can — no real schedule" /><span>When I can — no real schedule</span></label>
-          <label class="radio-item"><input type="radio" name="postFreqNow" value="A few times a month" /><span>A few times a month</span></label>
-          <label class="radio-item"><input type="radio" name="postFreqNow" value="Weekly" /><span>Weekly</span></label>
-          <label class="radio-item"><input type="radio" name="postFreqNow" value="Multiple times a week" /><span>Multiple times a week</span></label>
-          <label class="radio-item"><input type="radio" name="postFreqNow" value="Daily" /><span>Daily</span></label>
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="field-label">How often do you THINK you should be posting?
-          <span class="hint">Be honest — most people say daily but let's find what actually works for YOUR life!</span>
-        </label>
-        <div class="radio-group">
-          <label class="radio-item"><input type="radio" name="postFreqWant" value="A few times a month" /><span>A few times a month</span></label>
-          <label class="radio-item"><input type="radio" name="postFreqWant" value="Once a week" /><span>Once a week</span></label>
-          <label class="radio-item"><input type="radio" name="postFreqWant" value="2-3 times a week" /><span>2-3 times a week</span></label>
-          <label class="radio-item"><input type="radio" name="postFreqWant" value="Daily" /><span>Daily</span></label>
-          <label class="radio-item"><input type="radio" name="postFreqWant" value="I have no idea — help me figure it out" /><span>I have no idea — help me figure it out!</span></label>
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="contentTopics">What topics related to YOUR BUSINESS could you talk about all day without getting tired?
-          <span class="hint">Examples: a hair stylist might say protective styles, hair health, confidence — a baker might say flavor combinations, decorating, the joy of feeding people</span>
-        </label>
-        <textarea id="contentTopics" name="contentTopics" placeholder="I could talk about..."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="bestContent">What's one piece of content that performed well or that you felt really good about?
-          <span class="hint">Not started yet? What kind of content excites you most?</span>
-        </label>
-        <textarea id="bestContent" name="bestContent" placeholder="My best content was... / I'm most excited about creating..."></textarea>
-      </div>
-    </div>
-
-    <!-- SECTION 8 -->
-    <div class="section" data-section="8">
-      <div class="section-num">Section 8</div>
-      <div class="section-title">Just Between Us</div>
-
-      <div class="field">
-        <label class="field-label" for="extraInfo">Is there anything about your business or your journey that you want us to know that we didn't ask? This is your space — don't hold back!</label>
-        <textarea id="extraInfo" name="extraInfo" placeholder="Something else you should know about me..."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="bigHope">What's the ONE thing you're hoping this Brand Bible gives you that you haven't been able to figure out on your own?</label>
-        <textarea id="bigHope" name="bigHope" placeholder="I'm hoping this gives me..."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label">On a scale of 1-10 how confident are you in your business right now?
-          <span class="hint">1 = I'm just getting started and honestly scared, 10 = I'm ready to take over the world!</span>
-        </label>
-        <div class="radio-group confidence-grid">
-          <label class="radio-item"><input type="radio" name="confidence" value="1" /><span>1</span></label>
-          <label class="radio-item"><input type="radio" name="confidence" value="2" /><span>2</span></label>
-          <label class="radio-item"><input type="radio" name="confidence" value="3" /><span>3</span></label>
-          <label class="radio-item"><input type="radio" name="confidence" value="4" /><span>4</span></label>
-          <label class="radio-item"><input type="radio" name="confidence" value="5" /><span>5</span></label>
-          <label class="radio-item"><input type="radio" name="confidence" value="6" /><span>6</span></label>
-          <label class="radio-item"><input type="radio" name="confidence" value="7" /><span>7</span></label>
-          <label class="radio-item"><input type="radio" name="confidence" value="8" /><span>8</span></label>
-          <label class="radio-item"><input type="radio" name="confidence" value="9" /><span>9</span></label>
-          <label class="radio-item"><input type="radio" name="confidence" value="10" /><span>10</span></label>
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="deepWhy">What does building this business mean to you personally? Beyond the money — what's the deeper WHY?</label>
-        <textarea id="deepWhy" name="deepWhy" placeholder="Building this business means..."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="anythingElse">Anything else you want to add, confess, dream out loud, or share? This is a judgment free zone.</label>
-        <textarea id="anythingElse" name="anythingElse" placeholder="One more thing..."></textarea>
-      </div>
-
-      <div class="closing-box">
-        <h3>Hey Business Buddy — look at you!</h3>
-        <p>You just did something most people never do — you got <strong style="color:var(--gold)">CLEAR</strong>. And that alone sets you apart.</p>
-        <p>You showed up. You got honest. You dreamed out loud. Now let us do the rest.</p>
-        <p>Give us about 60 seconds while we take everything you just shared and build something beautiful — something personalized — just for you.</p>
-        <p class="quote">"So let's build — so you can rest in what God has placed inside of you, knowing that what's on the other side is greater. Don't just build a business. Use this blueprint to build a BRAND." 💛</p>
-        <button type="button" class="btn-generate" onclick="generateBible()">BUILD MY BRAND BIBLE</button>
-      </div>
-    </div>
-
-  </form>
-
-  <div class="nav" id="bbNav">
-    <button class="btn-back" id="btnBack" onclick="goBack()" style="display:none">← Back</button>
-    <button class="btn-next" id="btnNext" onclick="goNext()">Next Section →</button>
+  <div class="field">
+    <label class="field-label" for="idealClient">Who do you serve? Describe your ideal customer or client.</label>
+    <textarea id="idealClient" name="idealClient" placeholder="My ideal customer is..."></textarea>
   </div>
 
-  <div class="result-wrap" id="resultWrap">
-    <div class="loading" id="loadingState">
-      <div class="spinner"></div>
-      <h3>Building your Brand Bible...</h3>
-      <p>This usually takes about 60 seconds. Don't close this page!</p>
-    </div>
-    <div id="resultState" style="display:none">
-      <div class="result-header">
-        <h2 id="resultName">Your Brand Bible</h2>
-        <p>The Ministry of Business — Built just for you 💛</p>
-      </div>
-      <div class="result-content" id="resultContent"></div>
-      <div class="result-actions">
-        <button class="btn-copy" onclick="copyResult()">Copy My Brand Bible</button>
-        <button class="btn-print" onclick="window.print()">Print / Save as PDF</button>
-      </div>
-    </div>
-    <div class="error-box" id="errorState"></div>
+  <div class="field">
+    <label class="field-label" for="different">What makes you different and helps you stand out from everyone else doing what you do?</label>
+    <textarea id="different" name="different" placeholder="What sets me apart is..."></textarea>
   </div>
+
+  <div class="field">
+    <label class="field-label">What stage are you at right now?</label>
+    <div class="radio-group">
+      <label class="radio-item"><input type="radio" name="bizStage" value="Just starting (less than 1 year) — open but still finding my footing" /><span>Just starting (less than 1 year) — I'm open but still finding my footing</span></label>
+      <label class="radio-item"><input type="radio" name="bizStage" value="Established (1-3 years) — have customers but need to grow" /><span>Established (1-3 years) — I have customers but need to grow</span></label>
+      <label class="radio-item"><input type="radio" name="bizStage" value="Scaling (3+ years) — ready to take this to the next level" /><span>Scaling (3+ years) — I'm ready to take this to the next level</span></label>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section" data-section="2">
+  <div class="section-num">Section 2 of 4</div>
+  <div class="section-title">Your Story & Brand</div>
+
+  <div class="field">
+    <label class="field-label" for="why">What's your WHY — why did you start this business and what drives you to keep going?</label>
+    <textarea id="why" name="why" placeholder="I started this because..."></textarea>
+  </div>
+
+  <div class="field">
+    <label class="field-label" for="feelDoBecome">When someone encounters your BUSINESS what do you want them to FEEL, DO, and ultimately BECOME because of you?</label>
+    <textarea id="feelDoBecome" name="feelDoBecome" placeholder="I want them to feel... do... and become..."></textarea>
+  </div>
+
+  <div class="field">
+    <label class="field-label" for="personality">How would you describe your brand personality and vibe?
+      <span class="hint">Examples: bold and direct, warm and nurturing, fun and energetic, professional and polished, inspirational and faith driven — or describe it in your own words!</span>
+    </label>
+    <textarea id="personality" name="personality" placeholder="My brand personality is..."></textarea>
+  </div>
+
+  <div class="field">
+    <label class="field-label" for="neverWords">What words or phrases do you NEVER want associated with your business?</label>
+    <input type="text" id="neverWords" name="neverWords" placeholder="e.g. Cheap, Unprofessional, Generic..." />
+  </div>
+</div>
+
+<!-- SECTION 3 -->
+<div class="section" data-section="3">
+  <div class="section-num">Section 3 of 4</div>
+  <div class="section-title">Your Goals & Vision</div>
+
+  <div class="field">
+    <label class="field-label" for="incomeGoal">What is your income goal and what does success look like for you in the next 90 days?</label>
+    <textarea id="incomeGoal" name="incomeGoal" placeholder="My income goal is... In 90 days I want to..."></textarea>
+  </div>
+
+  <div class="field">
+    <label class="field-label" for="bigVision">Close your eyes. 3-5 years from now — where are you? What does your life AND your business look like? Dream out loud.</label>
+    <textarea id="bigVision" name="bigVision" placeholder="In 3-5 years..."></textarea>
+  </div>
+
+  <div class="field">
+    <label class="field-label" for="obstacles">Real talk — what has been challenging or a struggle for you in building this business? What feels hard, confusing, or overwhelming right now? No judgment here. This is a safe space. 💛</label>
+    <textarea id="obstacles" name="obstacles" placeholder="What's been challenging is..."></textarea>
+  </div>
+
+  <div class="field">
+    <label class="field-label" for="triedBefore">What have you already tried that hasn't worked? This helps us give you better direction and not send you backward.</label>
+    <textarea id="triedBefore" name="triedBefore" placeholder="I've tried... but it didn't work because..."></textarea>
+  </div>
+
+  <div class="field">
+    <label class="field-label" for="workSchedule">Realistically how many hours per week can you dedicate to building your business — and what day or days of the week work best?
+      <span class="hint">Example: 3 hours a week, Tuesdays and Thursdays. We'll build your actual schedule around this! 💛</span>
+    </label>
+    <input type="text" id="workSchedule" name="workSchedule" placeholder="e.g. 3 hours a week, Tuesdays 9am-11am" />
+  </div>
+
+  <div class="field">
+    <label class="field-label" for="bigHope">What's the ONE thing you're hoping this Brand Bible gives you that you haven't been able to figure out on your own?</label>
+    <textarea id="bigHope" name="bigHope" placeholder="The one thing I've never been able to figure out is..."></textarea>
+  </div>
+</div>
+
+<!-- SECTION 4 -->
+<div class="section" data-section="4">
+  <div class="section-num">Section 4 of 4</div>
+  <div class="section-title">Your Look, Presence & Content</div>
+
+  <div class="field">
+    <label class="field-label" for="socialMedia">Drop your social media handles or website below if you have them.
+      <span class="hint">Examples: Instagram @yourbusiness / Facebook: facebook.com/yourbusiness / www.yourwebsite.com — Not online yet? No worries — we'll tell you exactly where to start!</span>
+    </label>
+    <textarea id="socialMedia" name="socialMedia" placeholder="Instagram: @... / Facebook: ... / Website: ... / Not yet"></textarea>
+  </div>
+
+  <div class="field">
+    <label class="field-label" for="aesthetic">How would you describe your dream brand aesthetic or look? Are there any brands or accounts whose visual style you love? Name them!
+      <span class="hint">Examples: clean and minimal, bold and colorful, warm and earthy, bright and feminine, dark and luxurious</span>
+    </label>
+    <textarea id="aesthetic" name="aesthetic" placeholder="My dream brand look is... I love the style of..."></textarea>
+  </div>
+
+  <div class="field">
+    <label class="field-label" for="currentColors">What colors do you currently use in your brand — or what feeling do you want your brand to give off visually?
+      <span class="hint">No colors yet? That's okay — we'll suggest some that fit your personality! 💛</span>
+    </label>
+    <input type="text" id="currentColors" name="currentColors" placeholder="e.g. Black and gold / Warm and earthy tones / No colors yet" />
+  </div>
+
+  <div class="field">
+    <label class="field-label" for="contentType">What kind of content do you feel most comfortable creating and how often do you currently post?</label>
+    <textarea id="contentType" name="contentType" placeholder="I'm most comfortable creating... I currently post..."></textarea>
+  </div>
+
+  <div class="field">
+    <label class="field-label" for="contentTopics">What topics related to YOUR business could you talk about all day without getting tired?</label>
+    <textarea id="contentTopics" name="contentTopics" placeholder="I could talk about..."></textarea>
+  </div>
+
+  <div class="field">
+    <label class="field-label" for="secretSauce">Finally — what's the ONE thing you're hoping this Brand Bible gives you that you haven't been able to figure out on your own?
+      <span class="hint">Be specific. This is how we make sure your Bible speaks directly to your biggest need. 💛</span>
+    </label>
+    <textarea id="secretSauce" name="secretSauce" placeholder="The one thing I've never been able to figure out on my own is..."></textarea>
+  </div>
+
+  <div class="closing-box">
+    <h3>Hey Business Buddy — look at you! 🎉</h3>
+    <p>You just did something most people never do — you got <strong style="color:var(--gold)">CLEAR</strong>. And that alone sets you apart.</p>
+    <p>You showed up. You got honest. You dreamed out loud. Now let us do the rest.</p>
+    <p>Give us about 60 seconds while we take everything you just shared and build something beautiful — something personalized — just for you.</p>
+    <p class="quote">"So let's build — so you can rest in what God has placed inside of you, knowing that what's on the other side is greater. Don't just build a business. Use this blueprint to build a BRAND." 💛</p>
+    <button type="button" class="btn-generate" onclick="generateBible()">BUILD MY BRAND BIBLE</button>
+  </div>
+</div>
+
+</form>
+
+<div class="nav" id="bbNav">
+  <button class="btn-back" id="btnBack" onclick="goBack()" style="display:none">← Back</button>
+  <button class="btn-next" id="btnNext" onclick="goNext()">Next Section →</button>
+</div>
+
+<div class="result-wrap" id="resultWrap">
+  <div class="loading" id="loadingState">
+    <div class="spinner"></div>
+    <h3>Building your Brand Bible...</h3>
+    <p>This usually takes about 60 seconds. Don't close this page!</p>
+  </div>
+  <div id="resultState" style="display:none">
+    <div class="result-header">
+      <h2 id="resultName">Your Brand Bible</h2>
+      <p>The Ministry of Business — Built just for you 💛</p>
+    </div>
+    <div class="result-content" id="resultContent"></div>
+    <div class="result-actions">
+      <button class="btn-copy" onclick="copyResult()">Copy My Brand Bible</button>
+      <button class="btn-print" onclick="window.print()">Print / Save as PDF</button>
+    </div>
+  </div>
+  <div class="error-box" id="errorState"></div>
+</div>
 
 </div>
 
 <script>
 let currentSection = 1;
-const totalSections = 8;
+const totalSections = 4;
 
 function updateProgress() {
   const pct = Math.round((currentSection / totalSections) * 100);
-  document.getElementById('progressFill').style.width = pct + '%';
-  document.getElementById('progressLabel').textContent = 'Section ' + currentSection + ' of ' + totalSections;
-  document.getElementById('progressPct').textContent = pct + '%';
+  document.getElementById("progressFill").style.width = pct + "%";
+  document.getElementById("progressLabel").textContent = "Section " + currentSection + " of " + totalSections;
+  document.getElementById("progressPct").textContent = pct + "%";
 }
 
 function goNext() {
   if (currentSection < totalSections) {
-    document.querySelector('[data-section="' + currentSection + '"]').classList.remove('active');
+    document.querySelector("[data-section=\"" + currentSection + "\"]").classList.remove("active");
     currentSection++;
-    document.querySelector('[data-section="' + currentSection + '"]').classList.add('active');
+    document.querySelector("[data-section=\"" + currentSection + "\"]").classList.add("active");
     updateProgress();
-    document.getElementById('btnBack').style.display = 'block';
-    if (currentSection === totalSections) {
-      document.getElementById('btnNext').style.display = 'none';
-    }
+    document.getElementById("btnBack").style.display = "block";
+    if (currentSection === totalSections) document.getElementById("btnNext").style.display = "none";
     window.scrollTo(0, 0);
   }
 }
 
 function goBack() {
   if (currentSection > 1) {
-    document.querySelector('[data-section="' + currentSection + '"]').classList.remove('active');
+    document.querySelector("[data-section=\"" + currentSection + "\"]").classList.remove("active");
     currentSection--;
-    document.querySelector('[data-section="' + currentSection + '"]').classList.add('active');
+    document.querySelector("[data-section=\"" + currentSection + "\"]").classList.add("active");
     updateProgress();
-    document.getElementById('btnNext').style.display = 'block';
-    if (currentSection === 1) {
-      document.getElementById('btnBack').style.display = 'none';
-    }
+    document.getElementById("btnNext").style.display = "block";
+    if (currentSection === 1) document.getElementById("btnBack").style.display = "none";
     window.scrollTo(0, 0);
   }
 }
 
 function collectFormData() {
-  const form = document.getElementById('bbForm');
+  const form = document.getElementById("bbForm");
   const data = {};
-  const inputs = form.querySelectorAll('input, textarea, select');
+  const inputs = form.querySelectorAll("input, textarea, select");
   inputs.forEach(function(input) {
-    if (input.type === 'radio' && input.checked) {
+    if (input.type === "radio" && input.checked) {
       data[input.name] = input.value;
-    } else if (input.type === 'checkbox' && input.checked) {
+    } else if (input.type === "checkbox" && input.checked) {
       if (!data[input.name]) data[input.name] = [];
       data[input.name].push(input.value);
-    } else if (input.type !== 'radio' && input.type !== 'checkbox') {
+    } else if (input.type !== "radio" && input.type !== "checkbox") {
       if (input.value.trim()) data[input.name] = input.value.trim();
     }
   });
@@ -1081,113 +345,87 @@ function collectFormData() {
 }
 
 async function generateBible() {
-  document.getElementById('bbForm').style.display = 'none';
-  document.getElementById('bbNav').style.display = 'none';
-  document.getElementById('resultWrap').classList.add('active');
-  document.getElementById('loadingState').style.display = 'block';
-  document.getElementById('resultState').style.display = 'none';
-  document.getElementById('errorState').style.display = 'none';
+  const d = collectFormData();
+  const name = d.name || "Friend";
+  document.getElementById("bbForm").style.display = "none";
+  document.getElementById("bbNav").style.display = "none";
+  document.getElementById("resultWrap").classList.add("active");
+  document.getElementById("loadingState").style.display = "block";
+  document.getElementById("resultState").style.display = "none";
+  document.getElementById("errorState").style.display = "none";
+  document.getElementById("resultName").textContent = name + "'s Brand Bible";
   window.scrollTo(0, 0);
 
-  const d = collectFormData();
-  const name = d.name || 'Friend';
-  document.getElementById('resultName').textContent = name + "'s Brand Bible";
+  const prompt = `You are Joy from The Ministry of Business — a faith-driven business and brand coach. Write in plain text only. NO markdown symbols like # ## * ** ever. Use ALL CAPS for section headers. Use dashes for bullet points. Be TIGHT, SPECIFIC, and ACTIONABLE. Every line should help them DO something today. Reference their exact answers throughout — never be generic. Speak directly to them using their name.
 
-  const ct = Array.isArray(d.contentType) ? d.contentType.join(', ') : (d.contentType || 'Not provided');
+CLIENT ANSWERS:
+Name: ${d.name || "Friend"}
+Business Name: ${d.bizName || "Not provided"}
+What Business Does: ${d.bizDesc || "Not provided"}
+Who They Serve: ${d.idealClient || "Not provided"}
+What Makes Them Different: ${d.different || "Not provided"}
+Business Stage: ${d.bizStage || "Not provided"}
+Their WHY: ${d.why || "Not provided"}
+Feel Do Become: ${d.feelDoBecome || "Not provided"}
+Brand Personality: ${d.personality || "Not provided"}
+Never Words: ${d.neverWords || "Not provided"}
+Income Goal and 90 Days: ${d.incomeGoal || "Not provided"}
+Big Vision: ${d.bigVision || "Not provided"}
+Obstacles: ${d.obstacles || "Not provided"}
+What Hasn't Worked: ${d.triedBefore || "Not provided"}
+Work Schedule: ${d.workSchedule || "Not provided"}
+What They Hope to Get: ${d.bigHope || "Not provided"}
+Social Media: ${d.socialMedia || "Not provided"}
+Dream Aesthetic: ${d.aesthetic || "Not provided"}
+Colors: ${d.currentColors || "Not provided"}
+Content Style and Frequency: ${d.contentType || "Not provided"}
+Content Topics: ${d.contentTopics || "Not provided"}
+Secret Sauce Hope: ${d.secretSauce || "Not provided"}
 
-  const prompt = `You are Joy from The Ministry of Business. Write in plain text only. NO # ## * ** symbols ever. ALL CAPS for section headers. Dashes for lists. Be TIGHT and ACTIONABLE. Every line = something they can DO today.
-
-ANSWERS:
-Name: ${d.name || 'Friend'}
-Business: ${d.bizName || 'Not provided'}
-Does: ${d.bizDesc || 'Not provided'}
-Serves: ${d.idealClient || 'Not provided'}
-Problem: ${d.problemSolve || 'Not provided'}
-Type: ${d.bizType || 'Not provided'}
-Stage: ${d.bizStage || 'Not provided'}
-WHY: ${d.why || 'Not provided'}
-Story: ${d.story || 'Not provided'}
-Different: ${d.different || 'Not provided'}
-Credentials: ${d.credentials || 'Not provided'}
-Feel/Do/Become: ${d.feel || ''} / ${d.doAction || ''} / ${d.become || ''}
-Personality: ${d.personality || 'Not provided'}
-Vibe: ${d.vibe || 'Not provided'}
-Comm Style: ${d.commStyle || 'Not provided'}
-Admires: ${d.admire || 'Not provided'}
-Known For: ${d.knownFor || 'Not provided'}
-Never Say: ${d.neverWords || 'Not provided'}
-Income Goal: ${d.incomeGoal || 'Not provided'}
-90 Days: ${d.goal90 || 'Not provided'}
-1 Year: ${d.goal1yr || 'Not provided'}
-Vision: ${d.bigVision || 'Not provided'}
-Obstacles: ${d.obstacles || 'Not provided'}
-Hours/Week: ${d.hoursPerWeek || 'Not provided'}
-Schedule: ${d.workSchedule || 'Not provided'}
-Products: ${d.products || 'Not provided'}
-Pricing: ${d.pricing || 'Not provided'}
-Income How: ${d.incomeStreams || 'Not provided'}
-Sells Online: ${d.sellOnline || 'Not provided'}
-Best Offer: ${d.bestOffer || 'Not provided'}
-Unbuilt: ${d.unbuiltOffer || 'Not provided'}
-Social: ${d.socialMedia || 'Not provided'}
-Website: ${d.website || 'Not provided'}
-Presence: ${d.onlinePresence || 'Not provided'}
-Colors: ${d.currentColors || 'Not provided'}
-Aesthetic: ${d.aesthetic || 'Not provided'}
-Inspo: ${d.visualInspo || 'Not provided'}
-Logo: ${d.logo || 'Not provided'}
-Customer Deep: ${d.idealCustomerDeep || 'Not provided'}
-Customer Online: ${d.customerOnline || 'Not provided'}
-Struggle: ${d.mainStruggle || 'Not provided'}
-Content: ${ct}
-Posts Now: ${d.postFreqNow || 'Not provided'}
-Posts Goal: ${d.postFreqWant || 'Not provided'}
-Topics: ${d.contentTopics || 'Not provided'}
-Best Content: ${d.bestContent || 'Not provided'}
-Confidence: ${d.confidence || '?'}/10
-Deep WHY: ${d.deepWhy || 'Not provided'}
-Hope: ${d.bigHope || 'Not provided'}
-
-Write their Brand Bible. Plain text. Tight. Actionable. Specific to their exact answers.
+Write their complete Brand Bible. Every section must deliver on what was promised in the questions. If they asked for a business name suggestion — give one. If they have no colors — suggest specific ones. If they have no social media — tell them exactly where to start. If they shared what they hope to get — address it directly. Make them feel like God sent a coach with a personalized blueprint that covers everything they've been struggling to figure out.
 
 💛 ${name.toUpperCase()}'S BRAND BIBLE
 Built by The Ministry of Business
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
 A WORD BEFORE WE BEGIN
-[3 sentences directly to them. Use their name. Reference their specific WHY and story. Make them feel completely seen. Sign: xo Joy, The Ministry of Business 💛]
+[2-3 sentences. Use their name. Reference their specific WHY and what they hope to get from this Bible. Make them feel completely seen and ready to take action. Sign it: xo Joy, The Ministry of Business 💛]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
 SECTION 1: YOUR BRAND AT A GLANCE
-Business Name: [their name or best suggestion with brief why]
-You Help: [who + what + result in one sentence]
+Business Name: [their name — or if they want a suggestion, give a specific name and explain why in one sentence]
+You Help: [who + what + result — one powerful sentence]
 Your Promise: I help [who] go from [before] to [after] so they can [result]
-Your Superpower: [the ONE thing that makes them undeniably different — one bold sentence]
-DO THIS NOW: Write your promise on a sticky note. Put it where you see it every day. Every piece of content you create should connect back to this promise.
+Your Superpower: [what makes them undeniably different — one bold specific sentence]
+Your Stage: [their stage + one sentence about what this means strategically for them right now]
+DO THIS NOW: Write your promise on a sticky note and put it where you see it every single day. Every post, every conversation, every offer should prove this promise is real.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
 SECTION 2: YOUR BRAND STORY
-Your Story (use this everywhere):
-[3 punchy sentences rewriting their story as a brand narrative. Start with the moment everything changed. This is what they say on video, in their bio, and in every intro.]
+Your Story in 3 Sentences: [Rewrite their WHY as a compelling brand narrative. Start with the moment or reason. Make it punchy and personal. This is what they use everywhere.]
+
+The Transformation You Create:
+- Your customers FEEL: [specific to their answers]
+- Your customers DO: [specific]
+- Your customers BECOME: [specific]
 
 Your Proof Points:
 - [specific credibility from their answers]
 - [specific credibility]
-- [BUILD THIS: one specific action to gain more proof]
-- [BUILD THIS: one specific action]
+- BUILD THIS: [one specific action to gain more proof]
+- BUILD THIS: [one more specific action]
 
-DO THIS THIS WEEK: Post your 3-sentence brand story as a caption. Start it with "There was a moment when..." or "I used to..." That is your comeback post. That is your hook. Post it.
+DO THIS THIS WEEK: Post your 3-sentence brand story as your next caption. Start with "I started this because..." or "There was a moment when..." That is your most powerful post. Do it this week.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
 SECTION 3: YOUR BRAND VOICE
-You Sound Like: [one vivid specific sentence]
-Your Energy: [2-3 of their vibe words in context]
+You Sound Like: [one vivid specific sentence based on their personality answers]
 
 SAY THIS:
-- [specific phrase for their brand]
+- [specific phrase that fits their exact brand]
 - [specific phrase]
 - [specific phrase]
 - [specific phrase]
@@ -1195,135 +433,136 @@ SAY THIS:
 
 NEVER SAY THIS:
 - [from their never words]
-- [clashes with vibe]
-- [one more]
+- [clashes with their vibe]
+- [one more specific to their business]
 
-HOW TO USE THIS: Before you post anything, read it out loud. Does it sound like you talking to your best friend? If it sounds corporate, stiff, or fake — rewrite it using the phrases above. Your voice IS your brand.
+HOW TO USE THIS: Before you post anything — read it out loud. Does it sound like you talking to your best friend? If it sounds stiff or generic — rewrite it using the phrases above. Your voice is your brand. Protect it.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
-SECTION 4: YOUR BRAND LOOK
-YOUR COLORS (use on EVERY post, graphic, and product):
-- Primary: [color name] [hex code] — [one sentence why this fits them]
-- Secondary: [color name] [hex code] — [one sentence why]
-- Accent: [color name] [hex code] — [one sentence why]
+SECTION 4: YOUR BRAND COLORS AND LOOK
+YOUR COLORS (use these on every post, graphic, and product from today forward):
+- Primary: [specific color name and hex code] — [one sentence why this fits their personality and audience]
+- Secondary: [specific color name and hex code] — [one sentence why]
+- Accent: [specific color name and hex code] — [one sentence why]
 
 YOUR FONTS (free on Canva):
-- Headlines: [font name] — feels [specific adjective]
-- Body: [font name] — feels [specific adjective]
+- Headlines: [specific font name] — feels [specific adjective that matches their brand]
+- Body text: [specific font name] — feels [specific adjective]
 
-YOUR AESTHETIC: [one vivid sentence describing exactly what their brand should look like]
+YOUR AESTHETIC IN ONE SENTENCE: [vivid and specific — what should their brand look like visually]
 
-DO THIS TODAY: Open Canva. Go to Brand Kit. Enter these exact colors and fonts. Every post you make from today uses ONLY these. No exceptions. Consistency = recognition = trust = sales.
+DO THIS TODAY: Open Canva and go to Brand Kit. Enter these exact colors and fonts. Use them on every single post from today forward. Consistency builds recognition. Recognition builds trust. Trust builds sales.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
 SECTION 5: YOUR ONLINE PRESENCE
+[If they have social media — review what they have and give specific feedback. If they don't — tell them exactly which platform to start on and why.]
+
 YOUR BIO — COPY AND PASTE THIS RIGHT NOW:
-[3 lines. Their actual brand info. Their actual voice. Ready to use.]
+[Write their complete ready-to-use bio — 3 lines max — using their actual brand info, voice, and transformation promise. Make it compelling.]
 
 YOUR LINKS:
-- Link 1: [specific + why]
-- Link 2: [specific + why]
-- Link 3: [specific + why]
+- Link 1: [specific recommendation and why]
+- Link 2: [specific recommendation and why]
+- Link 3: [specific recommendation and why]
 
-FOCUS PLATFORM: [one platform + exactly why this one first]
+YOUR PLATFORM FOCUS: [one platform + exactly why this one first based on their business type and audience]
 
 DO THIS THIS WEEK:
-- Update bio with the exact text above right now
-- Update your link in bio
-- Follow 10 accounts in your exact niche today and genuinely engage
+- Update your bio with the exact text above right now — takes 2 minutes
 - Post 3 times using your content pillars below
+- Respond to every comment within 2 hours for the next 30 days — this signals the algorithm and builds community
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
 SECTION 6: YOUR OFFER LADDER
-Build these in order. One at a time. Don't skip ahead.
+Build these in order. Finish one before starting the next. This is how you get to [their income goal].
 
-FREEBIE (build your list):
-- Name: [specific compelling name]
-- What: [one sentence]
-- Format: [PDF / checklist / guide]
-- Leads to: your paid offer below
+FREEBIE — Build your email list first:
+- Name: [specific compelling freebie name tied to their business]
+- What it is: [one sentence]
+- Format: [PDF / checklist / guide / video]
+- Leads directly to: your first paid offer below
 
-OFFER 1 — START HERE ($17-37):
-- Name: [specific name]
-- What it does: [transformation in 2 sentences]
-- Price: $[specific] because [one reason]
+OFFER 1 — START HERE:
+- Name: [specific compelling offer name]
+- What it does: [the transformation it creates in 2 sentences]
+- Price: $[specific price]
+- Why this price: [one sentence]
 - Build it in: [realistic timeframe]
-- Sell it on: [platform recommendation]
+- Sell it on: [specific platform recommendation]
 
-OFFER 2 — BUILD NEXT ($47-97):
-- Name: [specific name]
+OFFER 2 — BUILD NEXT:
+- Name: [specific offer name]
 - What it does: [2 sentences]
-- Price: $[specific]
-- Timeline: [when to build this]
+- Price: $[specific price]
+- When to build: [after Offer 1 is selling]
 
-OFFER 3 — YOUR BIG ONE ($197-497):
-- Name: [specific name]
+OFFER 3 — YOUR PREMIUM OFFER:
+- Name: [specific offer name]
 - What it does: [2 sentences]
 - Price: $[specific range]
-- This gets you to: [income milestone]
+- This is your path to: [their income goal]
 
-YOUR MATH TO [their income goal]:
-[3 specific sentences showing realistic numbers — how many sales of which offers = their goal]
+THE MATH TO [their income goal]: [3 specific sentences showing realistic numbers — how many sales of which offers gets them there]
 
-DO THIS NOW: Choose ONE offer. Just one. Set a 30-day deadline to build it. Tell someone you trust so they hold you accountable. Nothing else until this is done.
+DO THIS NOW: Pick ONE offer. Set a 30-day deadline. Tell someone you trust so they hold you accountable. Nothing else until this is done.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
-SECTION 7: YOUR CONTENT PLAN
-YOUR 5 PILLARS — rotate one per post:
-1. [Pillar]: [what to create] — Post idea: "[specific example for their business]"
-2. [Pillar]: [what to create] — Post idea: "[specific example]"
-3. [Pillar]: [what to create] — Post idea: "[specific example]"
-4. [Pillar]: [what to create] — Post idea: "[specific example]"
-5. [Pillar]: [what to create] — Post idea: "[specific example]"
+SECTION 7: YOUR CONTENT STRATEGY
+YOUR 5 CONTENT PILLARS — rotate one per post every week:
+1. [Pillar name]: [what to create] — Post this week: "[specific post idea for their exact business]"
+2. [Pillar name]: [what to create] — Post this week: "[specific post idea]"
+3. [Pillar name]: [what to create] — Post this week: "[specific post idea]"
+4. [Pillar name]: [what to create] — Post this week: "[specific post idea]"
+5. [Pillar name]: [what to create] — Post this week: "[specific post idea]"
 
-YOUR SCHEDULE:
-- Post [X] times per week (realistic for their life)
-- Best days: [specific]
+YOUR REALISTIC POSTING SCHEDULE:
+- Post [X times per week — based on their stated availability]
+- Best days: [specific — based on their work schedule]
 - Best times: [specific]
 
-YOUR FIRST 5 POSTS — DO THESE NOW:
-1. [Post idea + exact caption direction]
-2. [Post idea + exact caption direction]
-3. [Post idea + exact caption direction]
-4. [Post idea + exact caption direction]
-5. [Post idea + exact caption direction]
+YOUR FIRST 5 POSTS — WRITE THESE THIS WEEK:
+1. [Specific post idea with exact caption direction]
+2. [Specific post idea with exact caption direction]
+3. [Specific post idea with exact caption direction]
+4. [Specific post idea with exact caption direction]
+5. [Specific post idea with exact caption direction]
 
-YOUR HASHTAGS — COPY THESE:
-[10 specific hashtags for their exact niche]
-
-━━━━━━━━━━━━━━━━━━━━━━━━
-
-SECTION 8: YOUR WEEKLY WORK PLAN
-YOUR TIME: [their specific day and hours]
-
-WEEKLY ROTATION:
-- Week 1: Create and schedule 3 posts + engage 20 minutes daily
-- Week 2: Work on your current offer — write or record one section
-- Week 3: Engage and grow — comment on 5 accounts in your niche daily
-- Week 4: Review results + plan next month + update one thing in this Bible
-
-AI SHORTCUTS FOR YOUR WORK TIME:
-- Write 4 captions in 10 min: give AI your pillar topic + ask for 4 versions in your voice
-- Build your freebie in 1 hour: give AI your topic + ask for complete outline + fill in your stories
-- Write your bio 5 ways in 5 min: paste your promise + ask for 5 bio variations
-- Handle objections: paste your offer + ask for top 10 objections + how to answer them
-- Plan 30 days of content: paste your 5 pillars + ask for 30 specific post ideas
+YOUR HASHTAGS — COPY THESE ON EVERY POST:
+[10 specific hashtags for their exact niche — no generic ones]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
-SECTION 9: YOUR 90-DAY PLAN
+SECTION 8: YOUR WEEKLY WORK SCHEDULE
+YOUR PROTECTED TIME: [their specific day and hours from their answers]
+
+WHAT TO DO EACH WEEK — ROTATE THIS PLAN:
+- Week 1: Create and schedule content for the week — use your 5 pillars above
+- Week 2: Work on your current offer — write one section, record one video, or design one graphic
+- Week 3: Engage and grow — comment on 5 accounts in your niche every day this week
+- Week 4: Review results, update one thing in this Bible, and plan next month
+
+HOW TO USE AI TO WORK SMARTER IN YOUR PROTECTED TIME:
+- Write 4 captions in 10 minutes: give AI your content pillar + ask for 4 versions in your brand voice
+- Build your freebie in 1 hour: describe your topic + ask for a complete outline then fill in your stories
+- Write your bio 5 ways in 5 minutes: paste your promise + ask for 5 bio variations then pick the best
+- Plan 30 days of content: paste your 5 pillars + ask for 30 specific post ideas for your business
+- Handle objections: paste your offer description + ask for the top 10 objections and how to answer them
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+
+SECTION 9: YOUR 90-DAY ACTION PLAN
 
 DAYS 1-30 — FOUNDATION
-Goal: [specific measurable target]
-Week 1: [specific actions]
+Goal: [specific measurable target tied to their 90-day goal]
+Week 1: [specific daily and weekly actions]
 Week 2: [specific actions]
 Week 3: [specific actions]
 Week 4: [specific actions]
-You WIN this month when: [specific milestone]
+You WIN this month when: [specific measurable milestone]
 
 DAYS 31-60 — MOMENTUM
 Goal: [specific measurable target]
@@ -1331,7 +570,7 @@ Week 5: [specific actions]
 Week 6: [specific actions]
 Week 7: [specific actions]
 Week 8: [specific actions]
-You WIN this month when: [specific milestone]
+You WIN this month when: [specific measurable milestone]
 
 DAYS 61-90 — GROWTH
 Goal: [specific measurable target]
@@ -1339,89 +578,81 @@ Week 9: [specific actions]
 Week 10: [specific actions]
 Week 11: [specific actions]
 Week 12: [specific actions]
-You WIN this quarter when: [specific milestone]
+You WIN this quarter when: [specific measurable milestone]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
 YOUR NEXT 3 MOVES — DO THESE TODAY
 
-1. Update your bio right now with the exact text in Section 5
-2. Set your protected work time in your calendar right now — [their specific day and hours]
-3. Pick your ONE first offer from Section 6 and write the name at the top of a blank page
+1. Update your bio right now with the exact text in Section 5 — takes 2 minutes
+2. Block your protected work time in your calendar right now — [their specific day and hours]
+3. Choose your ONE first offer from Section 6 and write its name at the top of a blank page
 
-[Name], everything you need is in this Bible. The only missing ingredient is your decision to start. God put this in you for a reason. The world needs what only YOU carry.
+━━━━━━━━━━━━━━━━━━━━━━━━
 
-[One sentence about their specific confidence level. One sentence about their specific obstacle — and why it won't stop them.]
+A CLOSING WORD FROM JOY
+
+[Name], I need you to hear this.
+
+[2-3 sentences that speak directly to their specific struggle and obstacle from their answers. Acknowledge what has been hard. Then speak faith and strategy over them specifically.]
+
+[1-2 sentences addressing exactly what they said they hoped to get from this Bible — confirm that they now have it and remind them the only missing piece is action.]
+
+Everything you need is in this Bible. The strategy is here. The schedule is here. The offers are here. The only ingredient that was never missing was YOU — and you just showed up.
 
 Don't just build a business. Build a BRAND. Build so you can rest in what God has placed inside of you, so you can LIVE.
 
 xo Joy, The Ministry of Business 💛
 
-Ready to go deeper? Everything The Ministry of Business has built for you is waiting at stan.store/theministryofbusiness 💛`
+Ready to go deeper? Everything The Ministry of Business has built for you is at stan.store/theministryofbusiness 💛`;
 
   try {
-    const response = await fetch('/api/generate', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        messages: [{ role: 'user', content: prompt }]
-      })
+    const response = await fetch("/api/generate", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ messages: [{ role: "user", content: prompt }] })
     });
-
     const data = await response.json();
     if (data.error) throw new Error(data.error.message);
     const result = data.content && data.content[0] && data.content[0].text;
-    if (!result) throw new Error('No content returned');
+    if (!result) throw new Error("No content returned");
 
-    document.getElementById('loadingState').style.display = 'none';
-    document.getElementById('resultState').style.display = 'block';
-    document.getElementById('loadingState').style.display = 'none';
-    document.getElementById('resultState').style.display = 'block';
-    
-    // Render the result beautifully
-    const lines = result.split('\n');
-    let html = '';
+    document.getElementById("loadingState").style.display = "none";
+    document.getElementById("resultState").style.display = "block";
+
+    const lines = result.split("\n");
+    let html = "";
     for (let line of lines) {
       line = line.trim();
-      if (!line) {
-        html += '<br>';
-      } else if (line.includes('━━━')) {
-        html += '<hr style="border:none;border-top:2px solid rgba(201,168,76,0.3);margin:1.5rem 0;">';
-      } else if (line.match(/^💛.*BRAND BIBLE$/)) {
-        html += '<h1 style="font-family:Playfair Display,serif;color:#2D5016;font-size:26px;font-weight:600;text-align:center;margin:1rem 0 0.25rem;">' + line + '</h1>';
-      } else if (line === 'Built by The Ministry of Business') {
-        html += '<p style="text-align:center;color:#C9A84C;font-size:13px;margin-bottom:1.5rem;letter-spacing:0.05em;">' + line + '</p>';
-      } else if (line.match(/^SECTION \d+:/)) {
-        html += '<h2 style="font-family:Playfair Display,serif;color:#2D5016;font-size:20px;font-weight:500;margin:1.5rem 0 0.75rem;padding-bottom:0.25rem;border-bottom:1px solid rgba(201,168,76,0.2);">' + line + '</h2>';
-      } else if (line.match(/^A WORD BEFORE|^A CLOSING WORD|^PHASE \d+:|^PILLAR \d+:/)) {
-        html += '<h3 style="font-family:Playfair Display,serif;color:#2D5016;font-size:16px;font-weight:500;margin:1.25rem 0 0.5rem;">' + line + '</h3>';
-      } else if (line.startsWith('- ')) {
-        html += '<p style="margin:0.4rem 0 0.4rem 1.5rem;color:#1A1A1A;line-height:1.6;">• ' + line.substring(2) + '</p>';
-      } else if (line.match(/^(Your |What |How |The |Business |Where |Who |An |A )[A-Z]/)) {
-        html += '<p style="margin:0.75rem 0 0.25rem;font-weight:500;color:#2D5016;">' + line + '</p>';
-      } else {
-        html += '<p style="margin:0.4rem 0;color:#1A1A1A;line-height:1.7;">' + line + '</p>';
-      }
+      if (!line) { html += "<br>"; continue; }
+      if (line.includes("━━━")) { html += "<hr style=\"border:none;border-top:2px solid rgba(201,168,76,0.3);margin:1.5rem 0;\">"; continue; }
+      if (line.match(/^💛.*BRAND BIBLE$/)) { html += "<h1 style=\"font-family:Playfair Display,serif;color:#2D5016;font-size:24px;font-weight:600;text-align:center;margin:1rem 0 0.25rem;\">" + line + "</h1>"; continue; }
+      if (line === "Built by The Ministry of Business") { html += "<p style=\"text-align:center;color:#C9A84C;font-size:13px;margin-bottom:1.5rem;letter-spacing:0.05em;\">" + line + "</p>"; continue; }
+      if (line.match(/^SECTION \d+:/) || line.match(/^YOUR NEXT|^A CLOSING/)) { html += "<h2 style=\"font-family:Playfair Display,serif;color:#2D5016;font-size:18px;font-weight:500;margin:1.75rem 0 0.75rem;padding-bottom:0.25rem;border-bottom:1px solid rgba(201,168,76,0.2);\">" + line + "</h2>"; continue; }
+      if (line.match(/^DO THIS|^A WORD BEFORE|^DAYS \d|^PHASE/)) { html += "<h3 style=\"font-family:Playfair Display,serif;color:#2D5016;font-size:15px;font-weight:500;margin:1.25rem 0 0.5rem;\">" + line + "</h3>"; continue; }
+      if (line.startsWith("- ")) { html += "<p style=\"margin:0.4rem 0 0.4rem 1.5rem;color:#1A1A1A;line-height:1.6;\">• " + line.substring(2) + "</p>"; continue; }
+      if (line.match(/^\d+\. /)) { html += "<p style=\"margin:0.5rem 0 0.5rem 1.5rem;color:#1A1A1A;line-height:1.6;font-weight:500;\">" + line + "</p>"; continue; }
+      html += "<p style=\"margin:0.4rem 0;color:#1A1A1A;line-height:1.7;\">" + line + "</p>";
     }
-    document.getElementById('resultContent').innerHTML = html;
+    document.getElementById("resultContent").innerHTML = html;
 
   } catch(err) {
-    document.getElementById('loadingState').style.display = 'none';
-    const errBox = document.getElementById('errorState');
-    errBox.style.display = 'block';
-    errBox.textContent = 'Something went wrong. Please try again. Error: ' + err.message;
+    document.getElementById("loadingState").style.display = "none";
+    const errBox = document.getElementById("errorState");
+    errBox.style.display = "block";
+    errBox.textContent = "Something went wrong. Please try again. Error: " + err.message;
   }
 }
 
 function copyResult() {
-  const text = document.getElementById('resultContent').textContent;
+  const el = document.getElementById("resultContent");
+  const text = el.innerText || el.textContent;
   navigator.clipboard.writeText(text).then(function() {
-    const btn = document.querySelector('.btn-copy');
-    btn.textContent = 'Copied!';
-    setTimeout(function() { btn.textContent = 'Copy My Brand Bible'; }, 2000);
+    const btn = document.querySelector(".btn-copy");
+    btn.textContent = "Copied!";
+    setTimeout(function() { btn.textContent = "Copy My Brand Bible"; }, 2000);
   });
 }
 </script>
-
 </body>
 </html>
