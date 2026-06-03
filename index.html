@@ -525,7 +525,7 @@ YOUR NEXT STEPS:
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
 SECTION 6: YOUR OFFER SUITE
-These are suggested offers based on everything you shared. They are designed to be easy to create, easy to implement, and easy to sell — especially at this stage of your business. Build them in order. Start with the freebie to grow your audience, then move to Offer 1. Do not skip ahead.
+These are suggested offers based on everything you shared. They are designed to be easy to create, easy to implement, and easy to sell — especially at this stage of your business. Build them in order. IMPORTANT PRICING RULES YOU MUST FOLLOW: Offer 1 must be between $7 and $47. Offer 2 must be between $47 and $97. Offer 3 must be between $97 and $197. No exceptions. Do not go above these ranges regardless of industry. These are starter businesses building trust and momentum. The goal is easy YES decisions that stack into real income.
 
 FREEBIE — Start here. Grow your list and build trust:
 - Name: [specific compelling freebie name — something they can create in a day using what they already know]
@@ -534,29 +534,29 @@ FREEBIE — Start here. Grow your list and build trust:
 - Why it works: [one sentence on why this specific freebie attracts their exact ideal customer]
 - Leads directly to: Offer 1 below
 
-OFFER 1 — START HERE (your first paid offer — easy yes price):
+OFFER 1 — START HERE (easy yes — your first paid offer):
 - Name: [specific offer name — clear, outcome-focused, easy to understand]
-- What it does: [the transformation it creates — 2 sentences max. Keep it simple and specific]
-- Price: $[between $7–$47 for digital products or $27–$97 for services — match to their market and audience]
-- Why this price: [one sentence — this is an easy YES for your audience and builds trust before the bigger ask]
-- Create it in: [3–7 days — be realistic. This should use knowledge or skills they already have]
-- Sell it on: [specific platform — Stan Store, Gumroad, Payhip, their website, or DMs — whatever is simplest for them]
+- What it does: [the transformation it creates — 2 sentences max]
+- Price: $[between $7–$47 ONLY — pick the right price for their market. Digital products lean $7–$27. Simple services or templates lean $27–$47. DO NOT go above $47 here.]
+- Why this price: [one sentence — this is a low-risk easy YES that gets them in the door]
+- Create it in: [3–7 days — use knowledge or skills they already have]
+- Sell it on: [simplest platform for them — Stan Store, Gumroad, Payhip, or DMs]
 
-OFFER 2 — BUILD NEXT (a mid-tier offer once Offer 1 is selling):
-- Name: [specific offer name]
-- What it does: [2 sentences — goes deeper than Offer 1]
-- Price: $[between $47–$197 — a natural next step up from Offer 1]
-- When to build: After you've sold at least 5 of Offer 1 and know what questions your audience keeps asking
+OFFER 2 — BUILD NEXT (mid-tier — once Offer 1 is selling):
+- Name: [specific offer name — goes one level deeper than Offer 1]
+- What it does: [2 sentences — more depth, more transformation than Offer 1]
+- Price: $[between $47–$97 ONLY — a natural next step. DO NOT go above $97 here.]
+- When to build: After you've sold at least 5 of Offer 1 and know what your audience keeps asking for next
 
 OFFER 3 — CREATE THIS NEXT (your signature offer — build after momentum):
-- Name: [specific offer name]
-- What it does: [2 sentences — this is your most complete transformation]
-- Price: $[between $97–$297 depending on industry and delivery format]
-- This is your path to: [their overall income goal — show the math simply]
+- Name: [specific offer name — this is your most complete solution]
+- What it does: [2 sentences — your biggest transformation, most complete offer]
+- Price: $[between $97–$197 ONLY — this is the ceiling for now. DO NOT go above $197.]
+- This is your path to: [their overall income goal — show the math]
 
-THE MATH TO [their overall income goal]: [3 specific sentences. Use the prices above. Show exactly how many sales of which offers gets them there. Keep it simple and believable.]
+THE MATH TO [their overall income goal]: [3 sentences ONLY using the prices above — $7–$47 for Offer 1, $47–$97 for Offer 2, $97–$197 for Offer 3. Show exactly how many sales per month gets them to their goal. Keep it simple, believable, and motivating.]
 
-YOUR NEXT STEPS: Pick ONE offer from above — start with the freebie or Offer 1. Set a 7-day deadline to create it. Tell one person about it today so you're accountable. Nothing else until this is done.
+YOUR NEXT STEPS: Pick ONE offer — start with the freebie or Offer 1. Set a 7-day deadline to create it. Tell one person today so you're accountable. Nothing else until this is done.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -682,11 +682,11 @@ Ready to go deeper? Everything The Ministry of Business has built for you is at 
       if (line.match(/^COLOR-BLOCK-/)) {
         const parts = line.split(":");
         const type = parts[0].replace("COLOR-BLOCK-","").toLowerCase();
-        const hex = parts[1];
-        const colorName = parts.slice(2).join(":");
+        let hex = parts[1].trim().replace("#","");
+        const colorName = parts.slice(2).join(":").trim();
         const label = type.charAt(0).toUpperCase() + type.slice(1);
-        const textColor = isLight(hex) ? "#1A1A1A" : "#ffffff";
-        html += `<div style="display:inline-flex;align-items:center;gap:10px;margin:0.3rem 0.5rem 0.3rem 0;"><div style="width:52px;height:52px;border-radius:8px;background:${hex};border:1px solid rgba(0,0,0,0.1);flex-shrink:0;"></div><div><p style="margin:0;font-size:12px;font-weight:500;color:#6B6B6B;text-transform:uppercase;letter-spacing:0.08em;">${label}</p><p style="margin:0;font-size:14px;font-weight:500;color:#1A1A1A;">${colorName}</p><p style="margin:0;font-size:12px;color:#6B6B6B;">${hex}</p></div></div>`;
+        const fullHex = "#" + hex;
+        html += `<div style="display:inline-flex;align-items:center;gap:10px;margin:0.3rem 0.5rem 0.4rem 0;"><div style="width:52px;height:52px;border-radius:8px;background:${fullHex};border:1px solid rgba(0,0,0,0.12);flex-shrink:0;"></div><div><p style="margin:0;font-size:11px;font-weight:500;color:#6B6B6B;text-transform:uppercase;letter-spacing:0.08em;">${label}</p><p style="margin:0;font-size:14px;font-weight:500;color:#1A1A1A;">${colorName}</p><p style="margin:0;font-size:12px;color:#6B6B6B;">${fullHex.toUpperCase()}</p></div></div>`;
         continue;
       }
       if (line.match(/^\d+\. /)) { html += "<p style=\"margin:0.3rem 0 0.3rem 1.4rem;color:#1A1A1A;line-height:1.6;font-weight:500;\">" + line + "</p>"; continue; }
